@@ -1,0 +1,2 @@
+# umamusume-birthdays
+ウマ娘の誕生日をiCal形式で配信するためのプログラム
