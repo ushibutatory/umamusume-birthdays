@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - src/**
-      - .github/workflows/Deploy.yml
+      - .github/workflows/Deploy.yaml
       - Dockerfile
 
 jobs:
