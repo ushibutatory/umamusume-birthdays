@@ -34,3 +34,4 @@ jobs:
           labels: GitHubActions
           branch: updateCalendar
           token: ${{ secrets.GITHUB_TOKEN }}
+          reviewers: "ushibutatory"
