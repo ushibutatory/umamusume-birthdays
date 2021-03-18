@@ -8,7 +8,11 @@ COPY src/app/package.json ./
 RUN npm install
 
 # copy source codes
-COPY src/app/. .
+COPY src/app/tsconfig.json ./
+COPY src/app/ts/. ./ts/
+
+# compile
+RUN npm run tsc
 
 # run web server
-CMD [ "node", "server.js" ]
+CMD [ "node", "dist/server.js" ]
