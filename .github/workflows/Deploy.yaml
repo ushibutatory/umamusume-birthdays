@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - src/**
+      - src/app/**
       - .github/workflows/Deploy.yaml
       - Dockerfile
 
@@ -13,7 +13,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Deploy to Heroku
         run: |
           heroku container:login

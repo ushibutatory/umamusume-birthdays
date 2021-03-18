@@ -7,6 +7,9 @@ WORKDIR /usr/src/app
 COPY src/app/package.json ./
 RUN npm install
 
+# copy iCal file
+COPY src/app/data/. ./data/
+
 # copy source codes
 COPY src/app/tsconfig.json ./
 COPY src/app/ts/. ./ts/
