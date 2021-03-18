@@ -1,0 +1,36 @@
+name: Update Calendar File
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - src/generator/**
+      - .github/workflows/UpdateCalendarFile.yaml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [15.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Build
+        run: |
+          cd "${GITHUB.WORKSPACE}/src/generator"
+          npm ci
+          npm run app
+      - name: Create Pull Request
+        id: cpr
+        uses: actions/upload-artifact@v2
+        with:
+          title: Update caledar file.
+          labels: GitHubActions
+          branch: updateCalendar
+          token: ${{ secrets.GITHUB_TOKEN }}
