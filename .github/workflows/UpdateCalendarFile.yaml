@@ -5,8 +5,7 @@ on:
     branches:
       - main
     paths:
-      - src/generator/**
-      - .github/workflows/UpdateCalendarFile.yaml
+      - birthdays.yaml
 
 jobs:
   build:
