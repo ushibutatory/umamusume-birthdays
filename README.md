@@ -24,5 +24,6 @@
    ![URLで追加(2)](docs/images/google/import_2.png)
 1. カレンダー名や色、通知などをお好みで変更してください。
    ![URLで追加(3)](docs/images/google/import_3.png)
+1. 予定が表示されるまで少し時間がかかる場合があります。
 
 ## 備考
