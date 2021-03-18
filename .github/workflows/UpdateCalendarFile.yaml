@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Build
         run: |
-          cd "${GITHUB.WORKSPACE}/src/generator"
+          cd "${GITHUB_WORKSPACE}/src/generator"
           npm ci
           npm run app
       - name: Create Pull Request
