@@ -1,0 +1,43 @@
+labels:
+  # Priority
+  - name: Priority/Critical
+    description: "【優先度: 緊急】なる早で対応したい。"
+    color: 6a1515
+  - name: Priority/High
+    description: "【優先度: 高】優先的に対応したい。"
+    color: b12323
+  - name: Priority/Middle
+    description: "【優先度: 中】時間ができたら対応したい。"
+    color: dc4e4e
+  - name: Priority/Low
+    description: "【優先度: 低】暇な時に対応してもいいかな、ぐらい。"
+    color: ea9595
+  - name: Priority/WontFix
+    description: "【優先度: 非対応】対応しない。"
+    color: aaaaaa
+  # Type:
+  - name: Type/Enhancement
+    description: "【種別: 向上】機能追加、拡張、改良。サービス価値をプラスするもの。"
+    color: 156a40
+  - name: Type/Bug
+    description: "【種別: バグ】不具合、エラー。サービス価値がマイナスになっているもの。"
+    color: 23b16a
+  - name: Type/Maintenance
+    description: "【種別: メンテナンス】ドキュメントやCI/CD、プロセス改善。サービス価値が変わらないもの。"
+    color: 4edc95
+  - name: Type/Question
+    description: "【種別: 疑問】検証が必要なこと。結果により別途Issuesを発行する。"
+    color: 95eabf
+
+repos:
+  - name: ushibutatory/umamusume-birthdays
+    labels:
+      - Priority/Critical
+      - Priority/High
+      - Priority/Middle
+      - Priority/Low
+      - Priority/WontFix
+      - Type/Enhancement
+      - Type/Bug
+      - Type/Maintenance
+      - Type/Question
