@@ -19,10 +19,15 @@
 
 [https://umamusume-birthdays-ical.herokuapp.com](https://umamusume-birthdays-ical.herokuapp.com)
 
-## カレンダーの購読方法
+## カレンダーの購読方法（例）
 
 - [Google Calendar](docs/google_calendar)
 - [Thunderbird](docs/thunderbird)
+
+その他、URL を指定して追加する機能があれば大抵のカレンダーアプリで購読可能なはずです。<br />
+（[iCalendar](https://ja.wikipedia.org/wiki/ICalendar)は多くのカレンダーで使われている標準的な形式のため）
+
+不明点あれば上記までご連絡ください。
 
 ## リンク
 
