@@ -9,7 +9,7 @@ app.listen(PORT, () => {
 });
 
 app.get("/", (req: express.Request, res: express.Response) => {
-  readFile("data/birthdays.ical", (error, data) => {
+  readFile("data/birthdays.ics", (error, data) => {
     if (error) throw error;
 
     res.setHeader("Content-Type", "text/calendar; charset=UTF-8");
