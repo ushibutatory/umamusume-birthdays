@@ -4,11 +4,9 @@
 
 ## 概要
 
-![image](https://twitter.com/ushibutatory/status/1372580108758753282/photo/1)
-
-[https://umamusume-birthdays-ical.herokuapp.com](https://umamusume-birthdays-ical.herokuapp.com)
-
 誕生日ボイスの聞き逃し防止のために、ウマ娘の誕生日を iCal 形式で配信しています。
+
+![image](https://pbs.twimg.com/media/Ewxhl7tVIAUIEk1?format=jpg&name=medium)
 
 **※非公式です。**
 **権利等で問題があれば即刻対応しますので下記までご連絡ください。**
@@ -17,7 +15,11 @@
 
 - Twitter: [@ushibutatory](https://twitter.com/ushibutatory)
 
+## カレンダーの URL
+
+[https://umamusume-birthdays-ical.herokuapp.com](https://umamusume-birthdays-ical.herokuapp.com)
+
 ## カレンダーの購読方法
 
-- [Google Calendar](docs/google.md)
-- [Thunderbird](docs/thunderbird.md)
+- [Google Calendar](docs/google_calendar)
+- [Thunderbird](docs/thunderbird)
