@@ -6,7 +6,7 @@
 
 誕生日ボイスの聞き逃し防止のために、ウマ娘の誕生日を iCal 形式で配信しています。
 
-![image](https://pbs.twimg.com/media/Ewxhl7tVIAUIEk1?format=jpg&name=medium)
+![image](docs/image.png)
 
 **※非公式です。**
 **権利等で問題があれば即刻対応しますので下記までご連絡ください。**
@@ -23,3 +23,10 @@
 
 - [Google Calendar](docs/google_calendar)
 - [Thunderbird](docs/thunderbird)
+
+## リンク
+
+- キャラクタープロフィール公式ページ
+  - [キャラクター一覧 | ウマ娘プリティーダービー](https://umamusume.jp/character/)
+    - 上記に誕生日が記載されているキャラクターを登録しています。
+    - 未実装のキャラクターも含んでいます。
