@@ -1,4 +1,4 @@
-FROM node:15
+FROM node:15-slim
 
 # copy yaml file
 WORKDIR /usr
