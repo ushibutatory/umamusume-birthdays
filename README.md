@@ -13,8 +13,6 @@
 
 不備・誤り・ご指摘などあれば Issues を作成するか、下記アカウントまで DM やメンションにてご連絡ください。
 
-- Twitter: [@ushibutatory](https://twitter.com/ushibutatory)
-
 ## カレンダーの URL
 
 [https://umamusume-birthdays-ical.herokuapp.com](https://umamusume-birthdays-ical.herokuapp.com)
@@ -29,7 +27,11 @@
 その他、URL を指定して追加する機能があれば大抵のカレンダーアプリで購読可能なはずです。<br />
 （[iCalendar](https://ja.wikipedia.org/wiki/ICalendar)は多くのカレンダーで使われている標準的な形式のため）
 
-不明点あれば上記までご連絡ください。
+不明点あれば下記アカウントまでご連絡ください。
+
+## 連絡先
+
+- Twitter: [@ushibutatory](https://twitter.com/ushibutatory)
 
 ## リンク
 
