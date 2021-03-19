@@ -19,6 +19,8 @@
 
 [https://umamusume-birthdays-ical.herokuapp.com](https://umamusume-birthdays-ical.herokuapp.com)
 
+![QR](docs/url_qr.png)
+
 ## カレンダーの購読方法（例）
 
 - [Google Calendar](docs/google_calendar)
