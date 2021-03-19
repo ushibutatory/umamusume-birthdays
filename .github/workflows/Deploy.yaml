@@ -5,9 +5,10 @@ on:
     branches:
       - main
     paths:
-      - src/app/**
+      - src/**
       - .github/workflows/Deploy.yaml
       - Dockerfile
+      - birthdays.yaml
 
 jobs:
   deploy:
