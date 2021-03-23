@@ -11,7 +11,8 @@ const NEWLINE: string = "\r\n";
 const yamlText = fs.readFileSync("../../birthdays.yaml", "utf-8");
 
 // YAMLを解析
-const birthdays = YAML.parse(yamlText)["birthdays"];
+const rootKey = "birthdays";
+const birthdays = YAML.parse(yamlText)[rootKey];
 console.log(birthdays);
 
 // iCalendar形式の予定定義に変換
@@ -20,7 +21,7 @@ const events = birthdays.map((birthday: Birthday) => {
   return birthday.names
     .map((name: string) => new CalendarEvent(name, birthday.date))
     .map((event: CalendarEvent) => {
-      let _ = new Array();
+      const _ = new Array();
       _.push("BEGIN:VEVENT");
 
       _.push("CLASS:PUBLIC");
@@ -39,7 +40,7 @@ const events = birthdays.map((birthday: Birthday) => {
 
 // iCalendar形式のカレンダーを生成
 const _prodId: string = "ushibutatory-umamusume-birthdays-calendar";
-let iCal = new Array();
+const iCal = new Array();
 iCal.push("BEGIN:VCALENDAR");
 iCal.push(`PRODID:${_prodId}`);
 iCal.push("VERSION:2.0");

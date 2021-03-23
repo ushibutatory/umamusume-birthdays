@@ -7,7 +7,8 @@
     "tsc": "tsc",
     "generate": "ts-node ts/generator.ts",
     "ts-node": "ts-node",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "tslint './ts/*.ts' './ts/*/*.ts'",
+    "test": "jest --coverage --slient=false"
   },
   "keywords": [],
   "author": "ushibutatory",
@@ -19,8 +20,12 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.21",
     "@types/node": "^14.14.35",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.4",
     "ts-node": "^9.1.1",
+    "tslint": "^6.1.3",
     "typescript": "^4.2.3"
   }
 }
