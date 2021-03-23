@@ -1,5 +1,6 @@
 # ウマ娘誕生日カレンダー
 
+[![Build and Test](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/BuildAndTest.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/BuildAndTest.yaml)
 [![Deploy](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/Deploy.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/Deploy.yaml)
 
 ## 概要
