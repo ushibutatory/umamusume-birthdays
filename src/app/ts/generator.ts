@@ -1,6 +1,5 @@
 import fs from "fs";
 import moment from "moment";
-import YAML from "yaml";
 import { Birthday } from "./models/Birthday";
 import { CalendarEvent } from "./models/CalendarEvent";
 
@@ -11,8 +10,7 @@ const NEWLINE: string = "\r\n";
 const yamlText = fs.readFileSync("../../birthdays.yaml", "utf-8");
 
 // YAMLを解析
-const rootKey = "birthdays";
-const birthdays = YAML.parse(yamlText)[rootKey];
+const birthdays = Birthday.parse(yamlText);
 console.log(birthdays);
 
 // iCalendar形式の予定定義に変換
