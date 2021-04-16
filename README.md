@@ -25,8 +25,7 @@
 - [Google Calendar](docs/google_calendar)
 - [Thunderbird](docs/thunderbird)
 
-その他、URL を指定して追加する機能があれば大抵のカレンダーアプリで購読可能なはずです。<br />
-（[iCalendar](https://ja.wikipedia.org/wiki/ICalendar)は多くのカレンダーで使われている標準的な形式のため）
+その他、URL を指定して追加する機能があれば大抵のカレンダーアプリで購読可能なはずです。
 
 また、上記 URL からダウンロードした`.ics` ファイルに適当な名前を付けて保存し、カレンダーアプリに取り込むこともできます。<br/>
 （ただしその場合、追加や更新された誕生日は自動では反映されません。手動で取り込みなおす必要があります。）
