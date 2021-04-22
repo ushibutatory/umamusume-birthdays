@@ -27,6 +27,7 @@ const events = birthdays.map((birthday: Birthday) => {
       _.push(`DTSTAMP:${timestamp}`);
       _.push(`SUMMARY:${event.name}の誕生日`);
       _.push(`DESCRIPTION:${event.name}の誕生日です。`);
+      _.push(`RRULE:FREQ=YEARLY`);
       _.push(`DTSTART;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`);
       _.push(`DTEND;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`);
 
