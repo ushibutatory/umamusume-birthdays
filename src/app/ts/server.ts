@@ -1,9 +1,19 @@
 import express from "express";
+import rateLimit from "express-rate-limit";
 import { readFile } from "fs";
 
 const PORT = process.env.PORT || 8080;
 
 const app: express.Express = express();
+
+app.use(
+  // limit each IP
+  rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 150,
+  })
+);
+
 app.listen(PORT, () => {
   console.log(`Running on ${PORT}`);
 });
