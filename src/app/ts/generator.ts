@@ -62,6 +62,9 @@ iCal.push("END:VCALENDAR");
 
 // ファイル書き込み
 // TODO: パス指定がイマイチ
+if (!fs.existsSync("data")) {
+  fs.mkdirSync("data");
+}
 fs.writeFileSync("data/birthdays.ics", iCal.join(NEWLINE), {
   encoding: "utf-8",
 });
