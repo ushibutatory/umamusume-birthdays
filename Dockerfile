@@ -4,11 +4,8 @@ FROM node:15-slim
 WORKDIR /usr
 COPY birthdays.yaml ./
 
-# create application directory
-WORKDIR /usr/src/app
-RUN mkdir /usr/src/app/data
-
 # install packages
+WORKDIR /usr/src/app
 COPY src/app/package.json ./
 RUN npm install
 
