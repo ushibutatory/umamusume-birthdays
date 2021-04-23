@@ -37,6 +37,10 @@
 
 - Twitter: [@ushibutatory](https://twitter.com/ushibutatory)
 
+## 更新履歴
+
+[workflows/Deploy](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/Deploy.yaml)
+
 ## リンク
 
 - [キャラクター一覧 | ウマ娘プリティーダービー](https://umamusume.jp/character/)
