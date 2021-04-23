@@ -7,6 +7,7 @@
     "tsc": "tsc",
     "generate": "ts-node ts/generator.ts",
     "ts-node": "ts-node",
+    "format": "prettier --write **/*.{ts,json,yaml}",
     "lint": "eslint . --ext .ts",
     "lint--fix": "eslint . --ext .ts --fix",
     "test": "jest --coverage --slient=false"
@@ -28,7 +29,9 @@
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
     "jest": "^26.6.3",
+    "prettier": "^2.2.1",
     "ts-jest": "^26.5.5",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
