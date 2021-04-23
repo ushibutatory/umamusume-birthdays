@@ -3,7 +3,7 @@ import moment from "moment";
 import { Birthday } from "./models/Birthday";
 import { CalendarEvent } from "./models/CalendarEvent";
 
-const NEWLINE: string = "\r\n";
+const NEWLINE = "\r\n";
 
 // データファイル読み込み
 // TODO: パス指定の方法がイマイチ
@@ -19,7 +19,7 @@ const events = birthdays.map((birthday: Birthday) => {
   return birthday.names
     .map((name: string) => new CalendarEvent(name, birthday.date))
     .map((event: CalendarEvent) => {
-      const _ = new Array();
+      const _ = [];
       _.push("BEGIN:VEVENT");
 
       _.push("CLASS:PUBLIC");
@@ -38,8 +38,8 @@ const events = birthdays.map((birthday: Birthday) => {
 });
 
 // iCalendar形式のカレンダーを生成
-const _prodId: string = "ushibutatory-umamusume-birthdays-calendar";
-const iCal = new Array();
+const _prodId = "ushibutatory-umamusume-birthdays-calendar";
+const iCal = [];
 iCal.push("BEGIN:VCALENDAR");
 iCal.push(`PRODID:${_prodId}`);
 iCal.push("VERSION:2.0");
