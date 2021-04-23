@@ -20,7 +20,11 @@ app.listen(PORT, () => {
 
 app.get("/", (req: express.Request, res: express.Response) => {
   readFile("data/birthdays.ics", (error, data) => {
-    if (error) throw error;
+    if (error) {
+      console.log(error);
+      res.status(500).end();
+      return;
+    }
 
     res.setHeader("Content-Type", "text/calendar; charset=UTF-8");
     res.status(200).send(data);
