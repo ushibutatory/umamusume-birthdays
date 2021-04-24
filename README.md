@@ -17,9 +17,17 @@
 
 ## カレンダーの URL
 
+### 全ウマ娘
+
 [https://umamusume-birthdays-ical.herokuapp.com](https://umamusume-birthdays-ical.herokuapp.com)
 
 ![QR](docs/url_qr.png)
+
+### 育成可能なウマ娘のみ
+
+[https://umamusume-birthdays-ical.herokuapp.com/?filter=t](https://umamusume-birthdays-ical.herokuapp.com/?filter=t)
+
+![QR](docs/url_qr_t.png)
 
 ## カレンダーの購読方法（例）
 
@@ -47,4 +55,3 @@
   - 公式ページ。
   - 2021/04/05 現在の状態を反映しています。
     - 誕生日が記載されているキャラクターのみ登録しています。
-    - 育成可能なウマ娘として実装されていないキャラクターも含んでいます。

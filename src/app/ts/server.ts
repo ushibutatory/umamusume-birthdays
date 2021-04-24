@@ -19,7 +19,18 @@ app.listen(PORT, () => {
 });
 
 app.get("/", (req: express.Request, res: express.Response) => {
-  readFile("data/birthdays.ics", (error, data) => {
+  // 返すファイルを判定
+  const fileName = (() => {
+    switch (req.query.filter) {
+      case "t":
+        return "birthdays_t";
+      default:
+        return "birthdays";
+    }
+  })();
+
+  // ファイル内容を返す
+  readFile(`data/${fileName}.ics`, (error, data) => {
     if (error) {
       console.log(error);
       res.status(500).end();
