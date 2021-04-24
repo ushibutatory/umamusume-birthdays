@@ -5,15 +5,14 @@ import YAML from "yaml";
  * （YAMLファイルのデータ構造と対応）
  */
 export class Birthday {
+  readonly name: string;
   readonly date: string;
-  readonly names: string[];
-  constructor(date: string, names: string[]) {
+  constructor(name: string, date: string) {
+    this.name = name;
     this.date = date;
-    this.names = names;
   }
 
   static parse(yamlText: string): Birthday[] {
-    const rootKey = "birthdays";
-    return YAML.parse(yamlText)[rootKey] as Birthday[];
+    return YAML.parse(yamlText)["birthdays"] as Birthday[];
   }
 }

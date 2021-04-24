@@ -4,7 +4,7 @@ import { Birthday } from "./models/Birthday";
 import { CalendarEvent } from "./models/CalendarEvent";
 
 export class Generator {
-  run() {
+  run(): void {
     const NEWLINE = "\r\n";
 
     // データファイル読み込み
@@ -18,29 +18,21 @@ export class Generator {
     // iCalendar形式の予定定義に変換
     const timestamp = moment().format("YYYYMMDDTHHmmssZ");
     const events = birthdays.map((birthday: Birthday) => {
-      return birthday.names
-        .map((name: string) => new CalendarEvent(name, birthday.date))
-        .map((event: CalendarEvent) => {
-          const _ = [];
-          _.push("BEGIN:VEVENT");
+      const event = new CalendarEvent(birthday.name, birthday.date);
+      const _: string[] = [];
+      _.push("BEGIN:VEVENT");
 
-          _.push("CLASS:PUBLIC");
-          _.push(`UID:${event.uniqueId}`);
-          _.push(`DTSTAMP:${timestamp}`);
-          _.push(`SUMMARY:${event.name}の誕生日`);
-          _.push(`DESCRIPTION:${event.name}の誕生日です。`);
-          _.push(`RRULE:FREQ=YEARLY`);
-          _.push(
-            `DTSTART;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`
-          );
-          _.push(
-            `DTEND;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`
-          );
+      _.push("CLASS:PUBLIC");
+      _.push(`UID:${event.uniqueId}`);
+      _.push(`DTSTAMP:${timestamp}`);
+      _.push(`SUMMARY:${event.name}の誕生日`);
+      _.push(`DESCRIPTION:${event.name}の誕生日です。`);
+      _.push(`RRULE:FREQ=YEARLY`);
+      _.push(`DTSTART;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`);
+      _.push(`DTEND;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`);
 
-          _.push("END:VEVENT");
-          return _.join(NEWLINE);
-        })
-        .join(NEWLINE);
+      _.push("END:VEVENT");
+      return _.join(NEWLINE);
     });
 
     // iCalendar形式のカレンダーを生成
