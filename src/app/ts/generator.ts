@@ -2,24 +2,65 @@ import fs from "fs";
 import moment from "moment";
 import { Birthday } from "./models/Birthday";
 import { CalendarEvent } from "./models/CalendarEvent";
+import { Trainable } from "./models/Trainable";
 
 export class Generator {
-  run(): void {
-    const NEWLINE = "\r\n";
-
+  /**
+   * 一連の処理を実行します。
+   */
+  run() {
     // データファイル読み込み
-    // TODO: パス指定の方法がイマイチ
-    const yamlText = fs.readFileSync("../../birthdays.yaml", "utf-8");
-
-    // YAMLを解析
-    const birthdays = Birthday.parse(yamlText);
+    const birthdays = this.getBirthdays();
+    console.log("読み込んだ誕生日データは以下の通りです。");
     console.log(birthdays);
+    const trainable = this.getTrainable();
+    console.log("読み込んだ育成可能キャラデータは以下の通りです。");
+    console.log(trainable);
 
-    // iCalendar形式の予定定義に変換
+    // iCalendar形式に変換
+    const ical_allCharacters = this.generateICalendar(birthdays);
+    const ical_trainableCharacters = this.generateICalendar(
+      birthdays.filter((birthday) => trainable.names.includes(birthday.name))
+    );
+
+    // ファイル書き込み
+    // TODO: パス指定がイマイチ
+    if (!fs.existsSync("data")) {
+      fs.mkdirSync("data");
+    }
+    fs.writeFileSync("data/birthdays.ics", ical_allCharacters, {
+      encoding: "utf-8",
+    });
+    fs.writeFileSync("data/birthdays_t.ics", ical_trainableCharacters, {
+      encoding: "utf-8",
+    });
+  }
+
+  // TODO: パス指定の方法がイマイチ
+
+  /**
+   * 誕生日リストを読み込みます。
+   */
+  getBirthdays(): Birthday[] {
+    return Birthday.parse(fs.readFileSync("../../birthdays.yaml", "utf-8"));
+  }
+
+  /**
+   * 育成可能キャラ名リストを読み込みます。
+   */
+  getTrainable(): Trainable {
+    return Trainable.parse(fs.readFileSync("../../trainable.yaml", "utf-8"));
+  }
+
+  /**
+   * 誕生日カレンダーファイルデータを生成します。
+   */
+  generateICalendar(birthdays: Birthday[]): string {
+    const NEWLINE = "\r\n";
     const timestamp = moment().format("YYYYMMDDTHHmmssZ");
     const events = birthdays.map((birthday: Birthday) => {
       const event = new CalendarEvent(birthday.name, birthday.date);
-      const _: string[] = [];
+      const _ = [];
       _.push("BEGIN:VEVENT");
 
       _.push("CLASS:PUBLIC");
@@ -58,14 +99,7 @@ export class Generator {
     iCal.push(events.join(NEWLINE));
     iCal.push("END:VCALENDAR");
 
-    // ファイル書き込み
-    // TODO: パス指定がイマイチ
-    if (!fs.existsSync("data")) {
-      fs.mkdirSync("data");
-    }
-    fs.writeFileSync("data/birthdays.ics", iCal.join(NEWLINE), {
-      encoding: "utf-8",
-    });
+    return iCal.join(NEWLINE);
   }
 }
 
