@@ -3,6 +3,7 @@ FROM node:15-slim
 # copy yaml file
 WORKDIR /usr
 COPY birthdays.yaml ./
+COPY trainable.yaml ./
 
 # install packages
 WORKDIR /usr/src/app
