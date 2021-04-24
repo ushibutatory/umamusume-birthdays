@@ -1,5 +1,6 @@
 import fs from "fs";
 import moment from "moment";
+import { WriteFileOptions } from "node:fs";
 import { Birthday } from "./models/Birthday";
 import { CalendarEvent } from "./models/CalendarEvent";
 import { Trainable } from "./models/Trainable";
@@ -8,7 +9,7 @@ export class Generator {
   /**
    * 一連の処理を実行します。
    */
-  run() {
+  run(): void {
     // データファイル読み込み
     const birthdays = this.getBirthdays();
     console.log("読み込んだ誕生日データは以下の通りです。");
@@ -17,23 +18,28 @@ export class Generator {
     console.log("読み込んだ育成可能キャラデータは以下の通りです。");
     console.log(trainable);
 
-    // iCalendar形式に変換
-    const ical_allCharacters = this.generateICalendar(birthdays);
-    const ical_trainableCharacters = this.generateICalendar(
-      birthdays.filter((birthday) => trainable.names.includes(birthday.name))
+    // iCalendar形式でファイル生成
+    // TODO: パス指定がイマイチ
+    if (!fs.existsSync("data")) fs.mkdirSync("data");
+    const options: WriteFileOptions = {
+      encoding: "utf-8",
+    };
+
+    // 全ウマ娘
+    fs.writeFileSync(
+      "data/birthdays.ics",
+      this.generateICalendar(birthdays),
+      options
     );
 
-    // ファイル書き込み
-    // TODO: パス指定がイマイチ
-    if (!fs.existsSync("data")) {
-      fs.mkdirSync("data");
-    }
-    fs.writeFileSync("data/birthdays.ics", ical_allCharacters, {
-      encoding: "utf-8",
-    });
-    fs.writeFileSync("data/birthdays_t.ics", ical_trainableCharacters, {
-      encoding: "utf-8",
-    });
+    // 育成可能なウマ娘
+    fs.writeFileSync(
+      "data/birthdays_t.ics",
+      this.generateICalendar(
+        birthdays.filter((birthday) => trainable.names.includes(birthday.name))
+      ),
+      options
+    );
   }
 
   // TODO: パス指定の方法がイマイチ
