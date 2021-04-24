@@ -15,6 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup NodeJs
+        uses: actions/setup-node@v2
+        with:
+          node-version: "15"
+      - name: Test
+        run: |
+          cd "${GITHUB_WORKSPACE}/src/app"
+          npm install
+          npm run lint
+          npm run test
       - name: Deploy to Heroku
         run: |
           heroku container:login
