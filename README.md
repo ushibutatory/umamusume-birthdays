@@ -17,7 +17,7 @@
 
 ## カレンダーの URL
 
-### 全ウマ娘
+### 全ウマ娘（誕生日ボイスが未実装のキャラクターも含む）
 
 [https://umamusume-birthdays-ical.herokuapp.com](https://umamusume-birthdays-ical.herokuapp.com)
 
