@@ -5,22 +5,22 @@ describe("Birthday", () => {
     // 入力テキスト
     const yamlText = `
 birthdays:
-  - date: "01/01"
-    names: ["sample1"]
-  - date: "01/02"
-    names: ["sample2", "sample3"]
+  - name: "sample1"
+    date: "01/01"
+  - name: "sample2"
+    date: "01/02"
 `;
 
     // 期待する結果
     const expects = [
-      new Birthday("01/01", ["sample1"]),
-      new Birthday("01/02", ["sample2", "sample3"]),
+      new Birthday("sample1", "01/01"),
+      new Birthday("sample2", "01/02"),
     ];
 
     const birthdays = Birthday.parse(yamlText);
     expects.forEach((birthday, index) => {
+      expect(birthday.name).toBe(birthdays[index].name);
       expect(birthday.date).toBe(birthdays[index].date);
-      expect(birthday.names).toStrictEqual(birthdays[index].names);
     });
   });
 });
