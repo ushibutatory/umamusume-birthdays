@@ -6,6 +6,17 @@ import { CalendarEvent } from "./models/CalendarEvent";
 import { Trainable } from "./models/Trainable";
 
 export class Generator {
+  // TODO: パス指定の方法がイマイチ
+  /**
+   * 元になるデータが格納されているディレクトリ
+   */
+  private readonly _resourceDirectory: string = "../../materials";
+
+  /**
+   * 配信用データを格納するディレクトリ
+   */
+  private readonly _publishDirectory: string = "data";
+
   /**
    * 一連の処理を実行します。
    */
@@ -20,21 +31,23 @@ export class Generator {
 
     // iCalendar形式でファイル生成
     // TODO: パス指定がイマイチ
-    if (!fs.existsSync("data")) fs.mkdirSync("data");
+    if (!fs.existsSync(this._publishDirectory)) {
+      fs.mkdirSync(this._publishDirectory);
+    }
     const options: WriteFileOptions = {
       encoding: "utf-8",
     };
 
     // 全ウマ娘
     fs.writeFileSync(
-      "data/birthdays.ics",
+      `${this._publishDirectory}/birthdays.ics`,
       this.generateICalendar(birthdays),
       options
     );
 
     // 育成可能なウマ娘
     fs.writeFileSync(
-      "data/birthdays_t.ics",
+      `${this._publishDirectory}/birthdays_t.ics`,
       this.generateICalendar(
         birthdays.filter((birthday) => trainable.names.includes(birthday.name))
       ),
@@ -42,20 +55,22 @@ export class Generator {
     );
   }
 
-  // TODO: パス指定の方法がイマイチ
-
   /**
    * 誕生日リストを読み込みます。
    */
   getBirthdays(): Birthday[] {
-    return Birthday.parse(fs.readFileSync("../../birthdays.yaml", "utf-8"));
+    return Birthday.parse(
+      fs.readFileSync(`${this._resourceDirectory}/birthdays.yaml`, "utf-8")
+    );
   }
 
   /**
    * 育成可能キャラ名リストを読み込みます。
    */
   getTrainable(): Trainable {
-    return Trainable.parse(fs.readFileSync("../../trainable.yaml", "utf-8"));
+    return Trainable.parse(
+      fs.readFileSync(`${this._resourceDirectory}/trainable.yaml`, "utf-8")
+    );
   }
 
   /**
