@@ -8,8 +8,7 @@ on:
       - src/**
       - .github/workflows/Deploy.yaml
       - Dockerfile
-      - birthdays.yaml
-      - trainable.yaml
+      - materials/**
 
 jobs:
   deploy:

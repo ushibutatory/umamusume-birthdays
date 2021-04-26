@@ -5,8 +5,7 @@ on:
     paths:
       - src/**
       - .github/workflows/BuildAndTest.yaml
-      - birthdays.yaml
-      - trainable.yaml
+      - materials/**
 
 jobs:
   test:
