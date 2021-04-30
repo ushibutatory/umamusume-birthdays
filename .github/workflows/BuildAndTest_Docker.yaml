@@ -19,10 +19,7 @@ jobs:
         id: buildx
         with:
           install: true
-      - name: Build and Test
+      - name: Build
         run: |
           cd ${GITHUB_WORKSPACE}
-          docker build -t ushibutatory/umamusume-birthdays .
-          docker image list
-          docker run -p 49160:8080 -d ushibutatory/umamusume-birthdays
-          curl -I http://localhost:49160
+          docker build .
