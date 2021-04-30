@@ -23,5 +23,6 @@ jobs:
         run: |
           cd ${GITHUB_WORKSPACE}
           docker build -t ushibutatory/umamusume-birthdays .
+          docker image list
           docker run -p 49160:8080 -d ushibutatory/umamusume-birthdays
           curl -I http://localhost:49160
