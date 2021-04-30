@@ -1,0 +1,24 @@
+name: Docker build
+
+on:
+  push:
+    paths:
+      - Dockerfile
+      - src/**
+      - data/**.yaml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup
+        uses: docker/setup-buildx-action@v1
+        id: buildx
+        with:
+          install: true
+      - name: Build and Test
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          docker build -t ushibutatory/umamusume-birthdays .
+          docker run -p 49160:8080 -d ushibutatory/umamusume-birthdays
+          curl -I http://localhost:49160
