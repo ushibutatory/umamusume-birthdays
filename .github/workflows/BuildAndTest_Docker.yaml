@@ -3,6 +3,7 @@ name: Docker build
 on:
   push:
     paths:
+      - .github/workflows/BuildAndTest_Docker.yaml
       - Dockerfile
       - src/**
       - data/**.yaml
