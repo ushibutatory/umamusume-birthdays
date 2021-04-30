@@ -6,7 +6,7 @@ import { Birthday } from "./models/birthday";
 const sleep = (millseconds: number) =>
   new Promise((resolve) => setTimeout(resolve, millseconds));
 
-(async function myFunction() {
+(async () => {
   const options = new Options()
     .addArguments("--headless")
     .addArguments("--disable-dev-shm-usage");
