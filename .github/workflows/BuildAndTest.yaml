@@ -5,7 +5,7 @@ on:
     paths:
       - src/**
       - .github/workflows/BuildAndTest.yaml
-      - materials/**
+      - data/**
 
 jobs:
   test:

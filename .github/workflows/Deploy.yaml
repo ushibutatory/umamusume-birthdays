@@ -8,7 +8,7 @@ on:
       - src/**
       - .github/workflows/Deploy.yaml
       - Dockerfile
-      - materials/**
+      - data/**
 
 jobs:
   deploy:

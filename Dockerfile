@@ -1,9 +1,8 @@
 FROM node:15-slim
 
 # copy yaml file
-WORKDIR /usr
-COPY birthdays.yaml ./
-COPY trainable.yaml ./
+WORKDIR /usr/data
+COPY data/ ./
 
 # install packages
 WORKDIR /usr/src/app
