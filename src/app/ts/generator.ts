@@ -1,25 +1,87 @@
 import fs from "fs";
 import moment from "moment";
+import { WriteFileOptions } from "node:fs";
 import { Birthday } from "./models/Birthday";
 import { CalendarEvent } from "./models/CalendarEvent";
+import { Trainable } from "./models/Trainable";
 
-const NEWLINE: string = "\r\n";
+export class Generator {
+  // TODO: パス指定の方法がイマイチ
+  /**
+   * 元になるデータが格納されているディレクトリ
+   */
+  private readonly _resourceDirectory: string = "../../data";
 
-// データファイル読み込み
-// TODO: パス指定の方法がイマイチ
-const yamlText = fs.readFileSync("../../birthdays.yaml", "utf-8");
+  /**
+   * 配信用データを格納するディレクトリ
+   */
+  private readonly _publishDirectory: string = "data";
 
-// YAMLを解析
-const birthdays = Birthday.parse(yamlText);
-console.log(birthdays);
+  /**
+   * 一連の処理を実行します。
+   */
+  run(): void {
+    // データファイル読み込み
+    const birthdays = this.getBirthdays();
+    console.log("読み込んだ誕生日データは以下の通りです。");
+    console.log(birthdays);
+    const trainable = this.getTrainable();
+    console.log("読み込んだ育成可能キャラデータは以下の通りです。");
+    console.log(trainable);
 
-// iCalendar形式の予定定義に変換
-const timestamp = moment().format("YYYYMMDDTHHmmssZ");
-const events = birthdays.map((birthday: Birthday) => {
-  return birthday.names
-    .map((name: string) => new CalendarEvent(name, birthday.date))
-    .map((event: CalendarEvent) => {
-      const _ = new Array();
+    // iCalendar形式でファイル生成
+    // TODO: パス指定がイマイチ
+    if (!fs.existsSync(this._publishDirectory)) {
+      fs.mkdirSync(this._publishDirectory);
+    }
+    const options: WriteFileOptions = {
+      encoding: "utf-8",
+    };
+
+    // 全ウマ娘
+    fs.writeFileSync(
+      `${this._publishDirectory}/birthdays.ics`,
+      this.generateICalendar(birthdays),
+      options
+    );
+
+    // 育成可能なウマ娘
+    fs.writeFileSync(
+      `${this._publishDirectory}/birthdays_t.ics`,
+      this.generateICalendar(
+        birthdays.filter((birthday) => trainable.names.includes(birthday.name))
+      ),
+      options
+    );
+  }
+
+  /**
+   * 誕生日リストを読み込みます。
+   */
+  getBirthdays(): Birthday[] {
+    return Birthday.parse(
+      fs.readFileSync(`${this._resourceDirectory}/birthdays.yaml`, "utf-8")
+    );
+  }
+
+  /**
+   * 育成可能キャラ名リストを読み込みます。
+   */
+  getTrainable(): Trainable {
+    return Trainable.parse(
+      fs.readFileSync(`${this._resourceDirectory}/trainable.yaml`, "utf-8")
+    );
+  }
+
+  /**
+   * 誕生日カレンダーファイルデータを生成します。
+   */
+  generateICalendar(birthdays: Birthday[]): string {
+    const NEWLINE = "\r\n";
+    const timestamp = moment().format("YYYYMMDDTHHmmssZ");
+    const events = birthdays.map((birthday: Birthday) => {
+      const event = new CalendarEvent(birthday.name, birthday.date);
+      const _ = [];
       _.push("BEGIN:VEVENT");
 
       _.push("CLASS:PUBLIC");
@@ -33,35 +95,33 @@ const events = birthdays.map((birthday: Birthday) => {
 
       _.push("END:VEVENT");
       return _.join(NEWLINE);
-    })
-    .join(NEWLINE);
-});
+    });
 
-// iCalendar形式のカレンダーを生成
-const _prodId: string = "ushibutatory-umamusume-birthdays-calendar";
-const iCal = new Array();
-iCal.push("BEGIN:VCALENDAR");
-iCal.push(`PRODID:${_prodId}`);
-iCal.push("VERSION:2.0");
-iCal.push("METHOD:PUBLISH");
-{
-  iCal.push("BEGIN:VTIMEZONE");
-  iCal.push("TZID:Asia/Tokyo");
-  {
-    iCal.push("BEGIN:STANDARD");
-    iCal.push("DTSTART:19390101T000000");
-    iCal.push("TZOFFSETFROM:+0900");
-    iCal.push("TZOFFSETTO:+0900");
-    iCal.push("TZNAME:JST");
-    iCal.push("END:STANDARD");
+    // iCalendar形式のカレンダーを生成
+    const _prodId = "ushibutatory-umamusume-birthdays-calendar";
+    const iCal = [];
+    iCal.push("BEGIN:VCALENDAR");
+    iCal.push(`PRODID:${_prodId}`);
+    iCal.push("VERSION:2.0");
+    iCal.push("METHOD:PUBLISH");
+    {
+      iCal.push("BEGIN:VTIMEZONE");
+      iCal.push("TZID:Asia/Tokyo");
+      {
+        iCal.push("BEGIN:STANDARD");
+        iCal.push("DTSTART:19390101T000000");
+        iCal.push("TZOFFSETFROM:+0900");
+        iCal.push("TZOFFSETTO:+0900");
+        iCal.push("TZNAME:JST");
+        iCal.push("END:STANDARD");
+      }
+      iCal.push("END:VTIMEZONE");
+    }
+    iCal.push(events.join(NEWLINE));
+    iCal.push("END:VCALENDAR");
+
+    return iCal.join(NEWLINE);
   }
-  iCal.push("END:VTIMEZONE");
 }
-iCal.push(events.join(NEWLINE));
-iCal.push("END:VCALENDAR");
 
-// ファイル書き込み
-// TODO: パス指定がイマイチ
-fs.writeFileSync("data/birthdays.ics", iCal.join(NEWLINE), {
-  encoding: "utf-8",
-});
+new Generator().run();
