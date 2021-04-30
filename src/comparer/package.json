@@ -12,9 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "selenium-webdriver": "*"
+    "selenium-webdriver": "*",
+    "yaml": "^1.10.2"
   },
   "devDependencies": {
+    "@types/node": "^15.0.1",
     "@types/selenium-webdriver": "^4.0.12",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",

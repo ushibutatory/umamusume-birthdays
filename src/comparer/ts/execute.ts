@@ -1,5 +1,6 @@
 import { Builder, By, Capabilities } from "selenium-webdriver";
 import { Options } from "selenium-webdriver/chrome";
+import { Birthday } from "./models/birthday";
 
 // スリープ関数
 const sleep = (millseconds: number) =>
@@ -28,11 +29,25 @@ const sleep = (millseconds: number) =>
       By.css(".character-umamusume li.anime-show a img")
     );
 
-    // 名前を取得
-    const names = await Promise.all(
+    console.log("公式サイトに記載されている最新データは以下の通りです。");
+    const latestNames = await Promise.all(
       elements.map(async (element) => await element.getAttribute("alt"))
     );
-    console.log(names);
+    console.log(latestNames.sort());
+
+    console.log("現在カレンダーデータに登録している名前は以下の通りです。");
+    const currentNames = Birthday.getBirthdays().map(
+      (birthday) => birthday.name
+    );
+    console.log(currentNames.sort());
+
+    const diffNames = latestNames.filter((l) => !currentNames.indexOf(l));
+    if (diffNames.length == 0) {
+      console.log("未登録のウマ娘はいません。");
+    } else {
+      console.log("未登録のウマ娘は以下の通りです。");
+      console.log(diffNames.sort());
+    }
   } finally {
     driver.quit();
   }
