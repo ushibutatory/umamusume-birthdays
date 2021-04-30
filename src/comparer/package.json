@@ -1,31 +1,23 @@
 {
-  "name": "umamusume-birthdays-comparer",
-  "version": "0.0.1",
+  "name": "comparer",
+  "version": "1.0.0",
   "description": "",
-  "main": "comparer.js",
+  "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "compare": "ts-node ts/comparer.ts",
-    "ts-node": "ts-node",
-    "lint": "tslint './ts/*.ts' './ts/*/*.ts'",
-    "test": "jest --coverage --slient=false"
+    "execute": "ts-node ts/execute.ts",
+    "format": "prettier --write **/*.{ts,json,yaml}",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ushibutatory",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "yaml": "^1.10.2"
+    "selenium-webdriver": "*"
   },
   "devDependencies": {
-    "@types/chromedriver": "^81.0.0",
-    "@types/jest": "^26.0.22",
-    "@types/node": "^14.14.37",
     "@types/selenium-webdriver": "^4.0.12",
-    "chromedriver": "^89.0.0",
-    "jest": "^26.6.3",
-    "selenium-webdriver": "^4.0.0-beta.2",
-    "ts-jest": "^26.5.4",
+    "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
-    "tslint": "^6.1.3",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.4"
   }
 }
