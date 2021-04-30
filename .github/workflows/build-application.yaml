@@ -1,14 +1,14 @@
-name: Build and Test
+name: Build Application
 
 on:
   push:
     paths:
+      - .github/workflows/build-application.yaml
       - src/**
-      - .github/workflows/BuildAndTest.yaml
       - data/**.yaml
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

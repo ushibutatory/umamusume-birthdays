@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths:
+      - .github/workflows/deploy-prod.yaml
       - src/**
-      - .github/workflows/Deploy.yaml
-      - Dockerfile
       - data/**.yaml
+      - Dockerfile
 
 jobs:
   deploy:

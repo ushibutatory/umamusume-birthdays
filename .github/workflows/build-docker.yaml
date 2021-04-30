@@ -1,9 +1,9 @@
-name: Docker build
+name: Build Dockerfile
 
 on:
   push:
     paths:
-      - .github/workflows/BuildAndTest_Docker.yaml
+      - .github/workflows/build-docker.yaml
       - Dockerfile
       - src/**
       - data/**.yaml
