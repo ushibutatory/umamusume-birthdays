@@ -1,9 +1,5 @@
 # ウマ娘誕生日カレンダー
 
-[![Build and Test](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/BuildAndTest.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/BuildAndTest.yaml)
-[![CodeQL](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/codeql-analysis.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/codeql-analysis.yaml)
-[![Deploy](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/Deploy.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/Deploy.yaml)
-
 ## 概要
 
 誕生日ボイスの聞き逃し防止のために、ウマ娘の誕生日を iCal 形式で配信しています。
@@ -47,7 +43,12 @@
 
 ## 更新履歴
 
-[workflows/Deploy](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/Deploy.yaml)
+[![Build Application](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/build-application.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/build-application.yaml)
+[![Build Dockerfile](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/build-docker.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/build-docker.yaml)
+[![CodeQL](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/codeql-analysis.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/codeql-analysis.yaml)
+[![Deploy](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/deploy-prod.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/deploy-prod.yaml)
+
+[workflows/Deploy](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/deploy-prod.yaml)
 
 ## リンク
 
