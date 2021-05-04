@@ -17,13 +17,13 @@
 
 [https://umamusume-birthdays-ical.herokuapp.com](https://umamusume-birthdays-ical.herokuapp.com)
 
-![QR](docs/url_qr.png)
+![QR](docs/qr_code/url-all.png)
 
 ### 育成可能なウマ娘のみ
 
 [https://umamusume-birthdays-ical.herokuapp.com/?filter=t](https://umamusume-birthdays-ical.herokuapp.com/?filter=t)
 
-![QR](docs/url_qr_t.png)
+![QR](docs/qr_code/url-trainable.png)
 
 ## カレンダーの購読方法（例）
 
