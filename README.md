@@ -27,8 +27,8 @@
 
 ## カレンダーの購読方法（例）
 
-- [Google Calendar](docs/google_calendar)
-- [Thunderbird](docs/thunderbird)
+- [Google Calendar](docs/how_to_subscribe/google_calendar)
+- [Thunderbird](docs/how_to_subscribe/thunderbird)
 
 その他、URL を指定して追加する機能があれば大抵のカレンダーアプリで購読可能なはずです。
 
