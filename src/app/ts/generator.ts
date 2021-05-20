@@ -1,6 +1,5 @@
-import fs from "fs";
+import fs, { WriteFileOptions } from "fs";
 import moment from "moment";
-import { WriteFileOptions } from "node:fs";
 import { Birthday } from "./models/Birthday";
 import { CalendarEvent } from "./models/CalendarEvent";
 import { Trainable } from "./models/Trainable";

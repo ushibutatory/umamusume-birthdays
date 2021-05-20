@@ -17,18 +17,18 @@
 
 [https://umamusume-birthdays-ical.herokuapp.com](https://umamusume-birthdays-ical.herokuapp.com)
 
-![QR](docs/url_qr.png)
+![QR](docs/qr_code/url-all.png)
 
 ### 育成可能なウマ娘のみ
 
 [https://umamusume-birthdays-ical.herokuapp.com/?filter=t](https://umamusume-birthdays-ical.herokuapp.com/?filter=t)
 
-![QR](docs/url_qr_t.png)
+![QR](docs/qr_code/url-trainable.png)
 
 ## カレンダーの購読方法（例）
 
-- [Google Calendar](docs/google_calendar)
-- [Thunderbird](docs/thunderbird)
+- [Google Calendar](docs/how_to_subscribe/google_calendar)
+- [Thunderbird](docs/how_to_subscribe/thunderbird)
 
 その他、URL を指定して追加する機能があれば大抵のカレンダーアプリで購読可能なはずです。
 
@@ -54,5 +54,5 @@
 
 - [キャラクター一覧 | ウマ娘プリティーダービー](https://umamusume.jp/character/)
   - 公式ページ。
-  - 2021/04/26 現在の状態を反映しています。
+  - 2021/05/17 現在の状態を反映しています。
     - 誕生日が記載されているキャラクターのみ登録しています。
