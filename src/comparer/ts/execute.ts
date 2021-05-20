@@ -41,6 +41,7 @@ const sleep = (millseconds: number) =>
     );
     console.log(currentNames.sort());
 
+    // TODO: 比較方法に不具合あり
     const diffNames = latestNames.filter((l) => !currentNames.indexOf(l));
     if (diffNames.length == 0) {
       console.log("未登録のウマ娘はいません。");
