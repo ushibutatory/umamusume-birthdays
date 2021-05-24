@@ -90,7 +90,11 @@ export class Generator {
       _.push(`DESCRIPTION:${event.name}の誕生日です。`);
       _.push(`RRULE:FREQ=YEARLY`);
       _.push(`DTSTART;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`);
-      _.push(`DTEND;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`);
+      _.push(
+        `DTEND;VALUE=DATE:${moment(event.datetime)
+          .add(1, "days") // RFC5545により、DTENDは翌日を指定する
+          .format("YYYYMMDD")}`
+      );
 
       _.push("END:VEVENT");
       return _.join(NEWLINE);
