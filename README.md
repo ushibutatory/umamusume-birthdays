@@ -21,9 +21,9 @@
 
 ### 育成可能なウマ娘のみ
 
-[https://umamusume-birthdays-ical.herokuapp.com/?filter=t](https://umamusume-birthdays-ical.herokuapp.com/?filter=t)
+[https://umamusume-birthdays-ical.herokuapp.com/?filter=p](https://umamusume-birthdays-ical.herokuapp.com/?filter=p)
 
-![QR](docs/qr_code/url-trainable.png)
+![QR](docs/qr_code/url-playables.png)
 
 ## カレンダーの購読方法（例）
 

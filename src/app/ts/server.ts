@@ -22,8 +22,9 @@ app.get("/", (req: express.Request, res: express.Response) => {
   // 返すファイルを判定
   const fileName = (() => {
     switch (req.query.filter) {
-      case "t":
-        return "birthdays_t";
+      case "t": // NOTE: 旧仕様との後方互換性のために残してある
+      case "p":
+        return "birthdays_p";
       default:
         return "birthdays";
     }

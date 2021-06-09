@@ -2,7 +2,7 @@ import fs, { WriteFileOptions } from "fs";
 import moment from "moment";
 import { Birthday } from "./models/Birthday";
 import { CalendarEvent } from "./models/CalendarEvent";
-import { Trainable } from "./models/Trainable";
+import { Playables } from "./models/Playable";
 
 export class Generator {
   // TODO: パス指定の方法がイマイチ
@@ -24,9 +24,9 @@ export class Generator {
     const birthdays = this.getBirthdays();
     console.log("読み込んだ誕生日データは以下の通りです。");
     console.log(birthdays);
-    const trainable = this.getTrainable();
+    const playables = this.getPlayables();
     console.log("読み込んだ育成可能キャラデータは以下の通りです。");
-    console.log(trainable);
+    console.log(playables);
 
     // iCalendar形式でファイル生成
     // TODO: パス指定がイマイチ
@@ -46,9 +46,9 @@ export class Generator {
 
     // 育成可能なウマ娘
     fs.writeFileSync(
-      `${this._publishDirectory}/birthdays_t.ics`,
+      `${this._publishDirectory}/birthdays_p.ics`,
       this.generateICalendar(
-        birthdays.filter((birthday) => trainable.names.includes(birthday.name))
+        birthdays.filter((birthday) => playables.names.includes(birthday.name))
       ),
       options
     );
@@ -66,9 +66,9 @@ export class Generator {
   /**
    * 育成可能キャラ名リストを読み込みます。
    */
-  getTrainable(): Trainable {
-    return Trainable.parse(
-      fs.readFileSync(`${this._resourceDirectory}/trainable.yaml`, "utf-8")
+  getPlayables(): Playables {
+    return Playables.parse(
+      fs.readFileSync(`${this._resourceDirectory}/playables.yaml`, "utf-8")
     );
   }
 

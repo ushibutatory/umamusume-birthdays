@@ -12,14 +12,14 @@ birthdays:
     date: "MM/DD"
 ```
 
-## trainable.yaml
+## playables.yaml
 
 育成可能ウマ娘の一覧。
 
 育成可能なウマ娘が追加されたらこちらをメンテナンスする。
 
 ```yaml
-trainable:
+playables:
   names:
     - "名前"
 ```
