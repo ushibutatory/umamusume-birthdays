@@ -1,5 +1,6 @@
 import fs, { WriteFileOptions } from "fs";
 import moment from "moment";
+import { Constants } from "./consts";
 import { Birthday } from "./models/Birthday";
 import { CalendarEvent } from "./models/CalendarEvent";
 import { Playables } from "./models/Playable";
@@ -29,7 +30,6 @@ export class Generator {
     console.log(playables);
 
     // iCalendar形式でファイル生成
-    // TODO: パス指定がイマイチ
     if (!fs.existsSync(this._publishDirectory)) {
       fs.mkdirSync(this._publishDirectory);
     }
@@ -39,14 +39,14 @@ export class Generator {
 
     // 全ウマ娘
     fs.writeFileSync(
-      `${this._publishDirectory}/birthdays.ics`,
+      `${this._publishDirectory}/${Constants.CalendarFileName.All}`,
       this.generateICalendar(birthdays),
       options
     );
 
     // 育成可能なウマ娘
     fs.writeFileSync(
-      `${this._publishDirectory}/birthdays_p.ics`,
+      `${this._publishDirectory}/${Constants.CalendarFileName.Playables}`,
       this.generateICalendar(
         birthdays.filter((birthday) => playables.names.includes(birthday.name))
       ),
@@ -59,7 +59,10 @@ export class Generator {
    */
   getBirthdays(): Birthday[] {
     return Birthday.parse(
-      fs.readFileSync(`${this._resourceDirectory}/birthdays.yaml`, "utf-8")
+      fs.readFileSync(
+        `${this._resourceDirectory}/${Constants.DataFileName.Birthdays}`,
+        "utf-8"
+      )
     );
   }
 
@@ -68,7 +71,10 @@ export class Generator {
    */
   getPlayables(): Playables {
     return Playables.parse(
-      fs.readFileSync(`${this._resourceDirectory}/playables.yaml`, "utf-8")
+      fs.readFileSync(
+        `${this._resourceDirectory}/${Constants.DataFileName.Playables}`,
+        "utf-8"
+      )
     );
   }
 

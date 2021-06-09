@@ -1,6 +1,7 @@
 import express from "express";
 import rateLimit from "express-rate-limit";
 import { readFile } from "fs";
+import { Constants } from "./consts";
 
 const PORT = process.env.PORT || 8080;
 
@@ -24,14 +25,14 @@ app.get("/", (req: express.Request, res: express.Response) => {
     switch (req.query.filter) {
       case "t": // NOTE: 旧仕様との後方互換性のために残してある
       case "p":
-        return "birthdays_p";
+        return Constants.CalendarFileName.Playables;
       default:
-        return "birthdays";
+        return Constants.CalendarFileName.All;
     }
   })();
 
   // ファイル内容を返す
-  readFile(`data/${fileName}.ics`, (error, data) => {
+  readFile(`data/${fileName}`, (error, data) => {
     if (error) {
       console.log(error);
       res.status(500).end();
