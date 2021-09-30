@@ -4,7 +4,11 @@
 
 誕生日ボイスの聞き逃し防止のために、ウマ娘の誕生日を iCal 形式で配信しています。
 
-![image](docs/image.png)
+- イメージ
+  ![image](docs/image.png)
+
+- [ブラウザで確認する](https://calendar.google.com/calendar/embed?src=ic16hku49i5i7v0lpahprkecru1kb516%40import.calendar.google.com&ctz=Asia%2FTokyo)
+  - GoogleCalendar のプレビューページに遷移します
 
 **※非公式です。**
 **権利等で問題があれば即刻対応しますので下記までご連絡ください。**
