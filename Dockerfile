@@ -7,7 +7,7 @@ COPY data/ ./
 # install packages
 WORKDIR /usr/src/app
 COPY src/app/package.json ./
-RUN npm install
+RUN npm install --force
 
 # copy source codes
 COPY src/app/tsconfig.json ./
