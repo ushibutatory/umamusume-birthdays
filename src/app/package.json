@@ -17,7 +17,7 @@
   "license": "",
   "dependencies": {
     "express": "^4.17.2",
-    "express-rate-limit": "^6.1.0",
+    "express-rate-limit": "^6.2.0",
     "moment": "^2.29.1",
     "yaml": "^1.10.2"
   },
