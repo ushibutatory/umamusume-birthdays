@@ -18,7 +18,7 @@
   "dependencies": {
     "express": "^4.17.3",
     "express-rate-limit": "^6.3.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "yaml": "^1.10.2"
   },
   "devDependencies": {
