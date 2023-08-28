@@ -11,6 +11,9 @@ on:
       - data/**.yaml
       - Dockerfile
 
+env:
+  ROOT: "${GITHUB_WORKSPACE}/src/app"
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -22,12 +25,13 @@ jobs:
           node-version: "17"
       - name: Test
         run: |
-          cd "${GITHUB_WORKSPACE}/src/app"
+          cd $ROOT
           npm install
           npm run lint
           npm run test
       - name: Generate Calendar
         run: |
+          cd $ROOT
           npm run generate
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
