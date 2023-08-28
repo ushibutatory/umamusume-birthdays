@@ -30,8 +30,9 @@ jobs:
         run: |
           cd "${GITHUB_WORKSPACE}/src/app"
           npm run generate
+          ls
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: birthdays.ics
-          path: "${GITHUB_WORKSPACE}/src/app/data/*.ics"
+          path: "${GITHUB_WORKSPACE}/src/app/**/*.ics"
