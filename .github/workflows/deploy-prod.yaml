@@ -33,6 +33,8 @@ jobs:
       - name: for Study
         run: |
           ls -l
+          cd src && ls -l
+          cd app && ls -l
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
