@@ -16,9 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup NodeJs
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: "17"
+          node-version: "18"
       - name: Test
         run: |
           cd "${GITHUB_WORKSPACE}/src/app"
