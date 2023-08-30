@@ -15,7 +15,7 @@ export class Generator {
   /**
    * 配信用データを格納するディレクトリ
    */
-  private readonly _publishDirectory: string = "data";
+  private readonly _publishDirectory: string = "dist/ja";
 
   /**
    * 一連の処理を実行します。
@@ -31,7 +31,7 @@ export class Generator {
 
     // iCalendar形式でファイル生成
     if (!fs.existsSync(this._publishDirectory)) {
-      fs.mkdirSync(this._publishDirectory);
+      fs.mkdirSync(this._publishDirectory, { recursive: true });
     }
     const options: WriteFileOptions = {
       encoding: "utf-8",
