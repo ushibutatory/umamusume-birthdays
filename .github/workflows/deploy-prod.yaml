@@ -41,6 +41,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ap-northeast-1
           AWS_BUCKET_NAME: s3://umamusume-birthdays/
-          DISTS: src/app/dist/*
+          DISTS: src/app/dist
         run: |
           aws s3 cp ${DISTS} ${AWS_BUCKET_NAME} --recursive
