@@ -39,4 +39,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: /src/app/dist
+          path: src/app/dist/*
