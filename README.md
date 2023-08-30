@@ -48,7 +48,6 @@
 ## 更新履歴
 
 [![Build Application](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/build-application.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/build-application.yaml)
-[![Build Dockerfile](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/build-docker.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/build-docker.yaml)
 [![CodeQL](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/codeql-analysis.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/codeql-analysis.yaml)
 [![Deploy](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/deploy-prod.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/deploy-prod.yaml)
 
