@@ -38,5 +38,11 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
+          name: calendars
           path: src/app/dist/*
+      - name: Deploy to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+        run: |
+          aws s3 sync src/app/dist/* s3://umamusume-birthday/
