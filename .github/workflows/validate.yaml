@@ -1,0 +1,35 @@
+name: Validate
+
+on:
+  push:
+    branches:
+      - "**"
+      - "!main"
+    paths:
+      - src/**
+      - data/**.yaml
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup NodeJs
+        uses: actions/setup-node@v2
+        with:
+          node-version: "17"
+      - name: Test
+        run: |
+          cd "${GITHUB_WORKSPACE}/src/app"
+          npm install
+          npm run lint
+          npm run test
+      - name: Generate Calendar
+        run: |
+          cd "${GITHUB_WORKSPACE}/src/app"
+          npm run generate
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: calendars
+          path: src/app/dist/*
