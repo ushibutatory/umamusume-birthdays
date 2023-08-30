@@ -40,5 +40,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ap-northeast-1
+          AWS_BUCKET_NAME: s3://umamusume-birthdays/
+          DISTS: src/app/dist/*
         run: |
-          aws s3 sync src/app/dist/* s3://umamusume-birthdays/
+          aws s3 sync --recursive ${DISTS} ${AWS_BUCKET_NAME}
