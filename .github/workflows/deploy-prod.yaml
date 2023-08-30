@@ -43,4 +43,4 @@ jobs:
           AWS_BUCKET_NAME: s3://umamusume-birthdays/
           DISTS: src/app/dist/*
         run: |
-          aws s3 sync --recursive ${DISTS} ${AWS_BUCKET_NAME}
+          aws s3 cp ${DISTS} ${AWS_BUCKET_NAME} --recursive
