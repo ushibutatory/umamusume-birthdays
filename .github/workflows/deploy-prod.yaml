@@ -41,4 +41,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ap-northeast-1
         run: |
-          aws s3 sync src/app/dist/* s3://umamusume-birthday/
+          aws s3 sync src/app/dist/* s3://umamusume-birthdays/
