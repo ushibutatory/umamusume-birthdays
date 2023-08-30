@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - develop
     paths:
       - .github/workflows/deploy-prod.yaml
       - src/**
