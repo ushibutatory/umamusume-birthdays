@@ -3,9 +3,10 @@ name: Validate
 on:
   push:
     branches:
-      - "**"
+      - **
       - "!main"
     paths:
+      - .github/workflows/**.yaml
       - src/**
       - data/**.yaml
 
