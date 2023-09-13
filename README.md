@@ -1,17 +1,13 @@
 # ウマ娘誕生日カレンダー
 
-⚠️ Heroku 無料版の終了に伴い、現在は正しく表示されません。
-
-⚠️ 現在プラットフォーム移管作業中です。来春までには対応します。申し訳ございません。
-
 ## 概要
 
-誕生日ボイスの聞き逃し防止のために、ウマ娘の誕生日を iCal 形式で配信しています。
+ウマ娘の誕生日を iCal 形式で配信しています。
 
 - イメージ
   ![image](docs/image.png)
 
-- [ブラウザで確認する](https://calendar.google.com/calendar/embed?src=ic16hku49i5i7v0lpahprkecru1kb516%40import.calendar.google.com&ctz=Asia%2FTokyo)
+- [ブラウザで確認する](https://calendar.google.com/calendar/embed?src=83epnukgujhnm6qh4g9c95o036pv2gin%40import.calendar.google.com&ctz=Asia%2FTokyo)
   - GoogleCalendar のプレビューページに遷移します
 
 **※非公式です。**
@@ -23,13 +19,13 @@
 
 ### 全ウマ娘（誕生日ボイスが未実装のキャラクターも含む）
 
-[https://umamusume-birthdays-ical.herokuapp.com](https://umamusume-birthdays-ical.herokuapp.com)
+[https://umamusume-birthdays.ushibutatory.net/ja/birthdays.ics](https://umamusume-birthdays.ushibutatory.net/ja/birthdays.ics)
 
 ![QR](docs/qr_code/url-all.png)
 
 ### 育成可能なウマ娘のみ
 
-[https://umamusume-birthdays-ical.herokuapp.com/?filter=p](https://umamusume-birthdays-ical.herokuapp.com/?filter=p)
+[https://umamusume-birthdays.ushibutatory.net/ja/birthdays_p.ics](https://umamusume-birthdays.ushibutatory.net/ja/birthdays_p.ics)
 
 ![QR](docs/qr_code/url-playables.png)
 
@@ -61,5 +57,5 @@
 
 - [キャラクター一覧 | ウマ娘プリティーダービー](https://umamusume.jp/character/)
   - 公式ページ。
-  - 2022/06/10 時点の状態を反映しています。
+  - 2023/09/10 時点の状態を反映しています。
     - 誕生日が記載されているキャラクターのみ登録しています。
