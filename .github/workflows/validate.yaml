@@ -1,16 +1,17 @@
-name: Deploy
+name: Validate
 
 on:
   push:
     branches:
-      - main
+      - "**"
+      - "!main"
     paths:
-      - .github/workflows/deploy-prod.yaml
+      - .github/workflows/**.yaml
       - src/**
       - data/**.yaml
 
 jobs:
-  deploy:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -33,12 +34,3 @@ jobs:
         with:
           name: calendars
           path: src/app/dist/*
-      - name: Deploy to S3
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ap-northeast-1
-          AWS_BUCKET_NAME: s3://umamusume-birthdays/
-          DISTS: src/app/dist
-        run: |
-          aws s3 cp ${DISTS} ${AWS_BUCKET_NAME} --recursive
