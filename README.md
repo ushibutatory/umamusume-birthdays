@@ -17,7 +17,7 @@
 
 ## カレンダーの URL
 
-### 全ウマ娘（誕生日ボイスが未実装のキャラクターも含む）
+### 全ウマ娘（※公式サイトで誕生日が明記されていること）
 
 [https://umamusume-birthdays.ushibutatory.net/ja/birthdays.ics](https://umamusume-birthdays.ushibutatory.net/ja/birthdays.ics)
 
