@@ -7,7 +7,7 @@ on:
     paths:
       - .github/workflows/deploy-prod.yaml
       - src/**
-      - data/**.yaml
+      - master/**.yaml
 
 jobs:
   deploy:

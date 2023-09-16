@@ -10,7 +10,7 @@ export class Generator {
   /**
    * 元になるデータが格納されているディレクトリ
    */
-  private readonly _resourceDirectory: string = "../../data";
+  private readonly _resourceDirectory: string = "../master";
 
   /**
    * 配信用データを格納するディレクトリ
