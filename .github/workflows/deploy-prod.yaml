@@ -7,7 +7,6 @@ on:
     paths:
       - .github/workflows/deploy-prod.yaml
       - src/**
-      - master/**.yaml
 
 jobs:
   deploy:
@@ -20,25 +19,25 @@ jobs:
           node-version: "18"
       - name: Test
         run: |
-          cd "${GITHUB_WORKSPACE}/src/app"
+          cd "${GITHUB_WORKSPACE}/src"
           npm install
           npm run lint
           npm run test
-      - name: Generate Calendar
+      - name: Create Calendar
         run: |
-          cd "${GITHUB_WORKSPACE}/src/app"
-          npm run generate
+          cd "${GITHUB_WORKSPACE}/src"
+          npm run execute
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: calendars
-          path: src/app/dist/*
+          path: src/dist/*
       - name: Deploy to S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ap-northeast-1
           AWS_BUCKET_NAME: s3://umamusume-birthdays/
-          DISTS: src/app/dist
+          DISTS: src/dist
         run: |
           aws s3 cp ${DISTS} ${AWS_BUCKET_NAME} --recursive
