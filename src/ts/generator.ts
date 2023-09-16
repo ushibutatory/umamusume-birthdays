@@ -10,9 +10,10 @@ export class Generator {
   public generateICalendar(birthdays: Birthday[], lang: keyof Name): string {
     const NEWLINE = "\r\n";
     const timestamp = moment().format("YYYYMMDDTHHmmssZ");
-    const events = birthdays.map((birthday: Birthday) => {
-      const name = birthday.name[lang];
-      if (name) {
+    const events = birthdays
+      .filter((_) => _.name[lang])
+      .map((birthday: Birthday) => {
+        const name = birthday.name[lang];
         const event = new CalendarEvent(name, birthday.date);
         const _ = [];
         _.push("BEGIN:VEVENT");
@@ -20,8 +21,8 @@ export class Generator {
         _.push("CLASS:PUBLIC");
         _.push(`UID:${event.uniqueId}`);
         _.push(`DTSTAMP:${timestamp}`);
-        _.push(`SUMMARY:${event.name}の誕生日`);
-        _.push(`DESCRIPTION:${event.name}の誕生日です。`);
+        _.push(`SUMMARY:${this._eventSummary(event, lang)}`);
+        _.push(`DESCRIPTION:${this._eventDescription(event, lang)}`);
         _.push(`RRULE:FREQ=YEARLY`);
         _.push(
           `DTSTART;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`
@@ -34,8 +35,7 @@ export class Generator {
 
         _.push("END:VEVENT");
         return _.join(NEWLINE);
-      }
-    });
+      });
 
     // iCalendar形式のカレンダーを生成
     const _prodId = "ushibutatory-umamusume-birthdays-calendar";
@@ -61,5 +61,27 @@ export class Generator {
     iCal.push("END:VCALENDAR");
 
     return iCal.join(NEWLINE);
+  }
+
+  private _eventSummary(event: CalendarEvent, lang: keyof Name): string {
+    return (() => {
+      switch (lang) {
+        case "ja":
+          return `${event.name}の誕生日`;
+        case "en":
+          return `${event.name}'s Birthday`;
+      }
+    })();
+  }
+
+  private _eventDescription(event: CalendarEvent, lang: keyof Name): string {
+    return (() => {
+      switch (lang) {
+        case "ja":
+          return `${event.name}の誕生日です。`;
+        case "en":
+          return `${event.name}'s Birthday`;
+      }
+    })();
   }
 }
