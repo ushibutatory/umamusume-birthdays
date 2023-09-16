@@ -5,7 +5,7 @@ export class Constants {
   /**
    * データファイル名
    */
-  public static DataFileName = class {
+  public static MasterFileName = class {
     /**
      * 誕生日リスト
      */
