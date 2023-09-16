@@ -1,189 +1,189 @@
 birthdays:
-  - name: { ja: "アイネスフウジン", en: "" }
+  - name: { ja: "アイネスフウジン", en: "Ines Fujin" }
     date: "04/10"
-  - name: { ja: "アグネスタキオン", en: "" }
+  - name: { ja: "アグネスタキオン", en: "Agnes Tachyon" }
     date: "04/13"
-  - name: { ja: "アグネスデジタル", en: "" }
+  - name: { ja: "アグネスデジタル", en: "Agnes Digital" }
     date: "05/15"
-  - name: { ja: "アストンマーチャン", en: "" }
+  - name: { ja: "アストンマーチャン", en: "Aston Machan" }
     date: "03/05"
-  - name: { ja: "アドマイヤベガ", en: "" }
+  - name: { ja: "アドマイヤベガ", en: "Admire Vega" }
     date: "03/12"
-  - name: { ja: "イクノディクタス", en: "" }
+  - name: { ja: "イクノディクタス", en: "Ikuno Dictus" }
     date: "04/16"
-  - name: { ja: "イナリワン", en: "" }
+  - name: { ja: "イナリワン", en: "Inari One" }
     date: "05/07"
-  - name: { ja: "ウイニングチケット", en: "" }
+  - name: { ja: "ウイニングチケット", en: "Winning Ticket" }
     date: "03/21"
-  - name: { ja: "ウオッカ", en: "" }
+  - name: { ja: "ウオッカ", en: "Vodka" }
     date: "04/04"
-  - name: { ja: "エアシャカール", en: "" }
+  - name: { ja: "エアシャカール", en: "Air Shakur" }
     date: "02/26"
-  - name: { ja: "エアグルーヴ", en: "" }
+  - name: { ja: "エアグルーヴ", en: "Air Groove" }
     date: "04/06"
-  - name: { ja: "エイシンフラッシュ", en: "" }
+  - name: { ja: "エイシンフラッシュ", en: "Eishin Flash" }
     date: "03/27"
-  - name: { ja: "エルコンドルパサー", en: "" }
+  - name: { ja: "エルコンドルパサー", en: "El Condor Pasa" }
     date: "03/17"
-  - name: { ja: "オグリキャップ", en: "" }
+  - name: { ja: "オグリキャップ", en: "Oguri Cap" }
     date: "03/27"
-  - name: { ja: "カツラギエース", en: "" }
+  - name: { ja: "カツラギエース", en: "Katsuragi Ace" }
     date: "04/24"
-  - name: { ja: "カレンチャン", en: "" }
+  - name: { ja: "カレンチャン", en: "Curren Chan" }
     date: "03/31"
-  - name: { ja: "カワカミプリンセス", en: "" }
+  - name: { ja: "カワカミプリンセス", en: "Kawakami Princess" }
     date: "06/05"
-  - name: { ja: "キタサンブラック", en: "" }
+  - name: { ja: "キタサンブラック", en: "Kitasan Black" }
     date: "03/10"
-  - name: { ja: "キングヘイロー", en: "" }
+  - name: { ja: "キングヘイロー", en: "King Halo" }
     date: "04/28"
-  - name: { ja: "グラスワンダー", en: "" }
+  - name: { ja: "グラスワンダー", en: "Grass Wonder" }
     date: "02/18"
-  - name: { ja: "ケイエスミラクル", en: "" }
+  - name: { ja: "ケイエスミラクル", en: "K.S.Miracle" }
     date: "03/16"
-  - name: { ja: "ゴールドシチー", en: "" }
+  - name: { ja: "ゴールドシチー", en: "Gold City" }
     date: "04/16"
-  - name: { ja: "ゴールドシップ", en: "" }
+  - name: { ja: "ゴールドシップ", en: "Gold Ship" }
     date: "03/06"
-  - name: { ja: "コパノリッキー", en: "" }
+  - name: { ja: "コパノリッキー", en: "Copano Rickey" }
     date: "03/24"
-  - name: { ja: "サイレンススズカ", en: "" }
+  - name: { ja: "サイレンススズカ", en: "Silence Suzuka" }
     date: "05/01"
-  - name: { ja: "サウンズオブアース", en: "" }
+  - name: { ja: "サウンズオブアース", en: "Sounds of Earth" }
     date: "04/12"
-  - name: { ja: "サクラチヨノオー", en: "" }
+  - name: { ja: "サクラチヨノオー", en: "Sakura Chiyono O" }
     date: "02/19"
-  - name: { ja: "サクラバクシンオー", en: "" }
+  - name: { ja: "サクラバクシンオー", en: "Sakura Bakushin O" }
     date: "04/14"
-  - name: { ja: "サクラローレル", en: "" }
+  - name: { ja: "サクラローレル", en: "Sakura Laurel" }
     date: "05/08"
-  - name: { ja: "サトノクラウン", en: "" }
+  - name: { ja: "サトノクラウン", en: "Satono Crown" }
     date: "03/10"
-  - name: { ja: "サトノダイヤモンド", en: "" }
+  - name: { ja: "サトノダイヤモンド", en: "Satono Diamond" }
     date: "01/30"
-  - name: { ja: "シーキングザパール", en: "" }
+  - name: { ja: "シーキングザパール", en: "Seeking the Pearl" }
     date: "04/16"
-  - name: { ja: "ジャングルポケット", en: "" }
+  - name: { ja: "ジャングルポケット", en: "Jungle Pocket" }
     date: "05/07"
-  - name: { ja: "シュヴァルグラン", en: "" }
+  - name: { ja: "シュヴァルグラン", en: "Cheval Grand" }
     date: "03/14"
-  - name: { ja: "シリウスシンボリ", en: "" }
+  - name: { ja: "シリウスシンボリ", en: "Sirius Symboli" }
     date: "03/26"
-  - name: { ja: "シンコウウインディ", en: "" }
+  - name: { ja: "シンコウウインディ", en: "Shinko Windy" }
     date: "04/14"
-  - name: { ja: "シンボリクリスエス", en: "" }
+  - name: { ja: "シンボリクリスエス", en: "Symboli Kris S" }
     date: "01/21"
-  - name: { ja: "シンボリルドルフ", en: "" }
+  - name: { ja: "シンボリルドルフ", en: "Symboli Rudolf" }
     date: "03/13"
-  - name: { ja: "スイープトウショウ", en: "" }
+  - name: { ja: "スイープトウショウ", en: "Sweep Tosho" }
     date: "05/09"
-  - name: { ja: "スーパークリーク", en: "" }
+  - name: { ja: "スーパークリーク", en: "Super Creek" }
     date: "05/27"
-  - name: { ja: "スペシャルウィーク", en: "" }
+  - name: { ja: "スペシャルウィーク", en: "Special Week" }
     date: "05/02"
-  - name: { ja: "スマートファルコン", en: "" }
+  - name: { ja: "スマートファルコン", en: "Smart Falcon" }
     date: "04/04"
-  - name: { ja: "セイウンスカイ", en: "" }
+  - name: { ja: "セイウンスカイ", en: "Seiun Sky" }
     date: "04/26"
-  - name: { ja: "ゼンノロブロイ", en: "" }
+  - name: { ja: "ゼンノロブロイ", en: "Zenno Rob Roy" }
     date: "03/27"
-  - name: { ja: "ダイイチルビー", en: "" }
+  - name: { ja: "ダイイチルビー", en: "Daiichi Ruby" }
     date: "04/15"
-  - name: { ja: "タイキシャトル", en: "" }
+  - name: { ja: "タイキシャトル", en: "Taiki Shuttle" }
     date: "03/23"
-  - name: { ja: "ダイタクヘリオス", en: "" }
+  - name: { ja: "ダイタクヘリオス", en: "Daitaku Helios" }
     date: "04/10"
-  - name: { ja: "ダイワスカーレット", en: "" }
+  - name: { ja: "ダイワスカーレット", en: "Daiwa Scarlet" }
     date: "05/13"
-  - name: { ja: "タップダンスシチー", en: "" }
+  - name: { ja: "タップダンスシチー", en: "Tap Dance City" }
     date: "03/16"
-  - name: { ja: "タニノギムレット", en: "" }
+  - name: { ja: "タニノギムレット", en: "Tanino Gimlet" }
     date: "05/04"
-  - name: { ja: "タマモクロス", en: "" }
+  - name: { ja: "タマモクロス", en: "Tamamo Cross" }
     date: "05/23"
-  - name: { ja: "ツインターボ", en: "" }
+  - name: { ja: "ツインターボ", en: "Twin Turbo" }
     date: "04/13"
-  - name: { ja: "ツルマルツヨシ", en: "" }
+  - name: { ja: "ツルマルツヨシ", en: "Tsurumaru Tsuyoshi" }
     date: "04/06"
-  - name: { ja: "テイエムオペラオー", en: "" }
+  - name: { ja: "テイエムオペラオー", en: "T.M.Opera O" }
     date: "03/13"
-  - name: { ja: "トウカイテイオー", en: "" }
+  - name: { ja: "トウカイテイオー", en: "Tokai Teio" }
     date: "04/20"
-  - name: { ja: "トーセンジョーダン", en: "" }
+  - name: { ja: "トーセンジョーダン", en: "Tosen Jordan" }
     date: "02/04"
-  - name: { ja: "ナイスネイチャ", en: "" }
+  - name: { ja: "ナイスネイチャ", en: "Nice Nature" }
     date: "04/16"
-  - name: { ja: "ナカヤマフェスタ", en: "" }
+  - name: { ja: "ナカヤマフェスタ", en: "Nakayama Festa" }
     date: "04/05"
-  - name: { ja: "ナリタタイシン", en: "" }
+  - name: { ja: "ナリタタイシン", en: "Narita Taishin" }
     date: "06/10"
-  - name: { ja: "ナリタトップロード", en: "" }
+  - name: { ja: "ナリタトップロード", en: "Narita Top Road" }
     date: "04/04"
-  - name: { ja: "ナリタブライアン", en: "" }
+  - name: { ja: "ナリタブライアン", en: "Narita Brian" }
     date: "05/03"
-  - name: { ja: "ニシノフラワー", en: "" }
+  - name: { ja: "ニシノフラワー", en: "Nishino Flower" }
     date: "04/19"
-  - name: { ja: "ネオユニヴァース", en: "" }
+  - name: { ja: "ネオユニヴァース", en: "Neo Universe" }
     date: "05/21"
-  - name: { ja: "ハルウララ", en: "" }
+  - name: { ja: "ハルウララ", en: "Haru Urara" }
     date: "02/27"
-  - name: { ja: "バンブーメモリー", en: "" }
+  - name: { ja: "バンブーメモリー", en: "Bamboo Memory" }
     date: "05/14"
-  - name: { ja: "ビコーペガサス", en: "" }
+  - name: { ja: "ビコーペガサス", en: "Biko Pegasus" }
     date: "02/08"
-  - name: { ja: "ヒシアケボノ", en: "" }
+  - name: { ja: "ヒシアケボノ", en: "Hishi Akebono" }
     date: "02/27"
-  - name: { ja: "ヒシアマゾン", en: "" }
+  - name: { ja: "ヒシアマゾン", en: "Hishi Amazon" }
     date: "03/26"
-  - name: { ja: "ヒシミラクル", en: "" }
+  - name: { ja: "ヒシミラクル", en: "Hishi Miracle" }
     date: "03/31"
-  - name: { ja: "ビワハヤヒデ", en: "" }
+  - name: { ja: "ビワハヤヒデ", en: "Biwa Hayahide" }
     date: "03/10"
-  - name: { ja: "ファインモーション", en: "" }
+  - name: { ja: "ファインモーション", en: "Fine Motion" }
     date: "01/27"
-  - name: { ja: "フジキセキ", en: "" }
+  - name: { ja: "フジキセキ", en: "Fuji Kiseki" }
     date: "04/15"
-  - name: { ja: "ホッコータルマエ", en: "" }
+  - name: { ja: "ホッコータルマエ", en: "Hokko Tarumae" }
     date: "05/26"
-  - name: { ja: "マーベラスサンデー", en: "" }
+  - name: { ja: "マーベラスサンデー", en: "Marvelous Sunday" }
     date: "05/31"
-  - name: { ja: "マチカネタンホイザ", en: "" }
+  - name: { ja: "マチカネタンホイザ", en: "Matikanetannhauser" }
     date: "05/07"
-  - name: { ja: "マチカネフクキタル", en: "" }
+  - name: { ja: "マチカネフクキタル", en: "Matikanefukukitaru" }
     date: "05/22"
-  - name: { ja: "マヤノトップガン", en: "" }
+  - name: { ja: "マヤノトップガン", en: "Mayano Top Gun" }
     date: "03/24"
-  - name: { ja: "マルゼンスキー", en: "" }
+  - name: { ja: "マルゼンスキー", en: "Maruzensky" }
     date: "05/19"
-  - name: { ja: "マンハッタンカフェ", en: "" }
+  - name: { ja: "マンハッタンカフェ", en: "Manhattan Cafe" }
     date: "03/05"
-  - name: { ja: "ミスターシービー", en: "" }
+  - name: { ja: "ミスターシービー", en: "Mr.C.B." }
     date: "04/07"
-  - name: { ja: "ミホノブルボン", en: "" }
+  - name: { ja: "ミホノブルボン", en: "Mihono Bourbon" }
     date: "04/25"
-  - name: { ja: "メイショウドトウ", en: "" }
+  - name: { ja: "メイショウドトウ", en: "Meisho Doto" }
     date: "03/25"
-  - name: { ja: "メジロアルダン", en: "" }
+  - name: { ja: "メジロアルダン", en: "Mejiro Ardan" }
     date: "03/28"
-  - name: { ja: "メジロドーベル", en: "" }
+  - name: { ja: "メジロドーベル", en: "Mejiro Dober" }
     date: "05/06"
-  - name: { ja: "メジロパーマー", en: "" }
+  - name: { ja: "メジロパーマー", en: "Mejiro Palmer" }
     date: "03/21"
-  - name: { ja: "メジロブライト", en: "" }
+  - name: { ja: "メジロブライト", en: "Mejiro Bright" }
     date: "04/19"
-  - name: { ja: "メジロマックイーン", en: "" }
+  - name: { ja: "メジロマックイーン", en: "Mejiro McQueen" }
     date: "04/03"
-  - name: { ja: "メジロライアン", en: "" }
+  - name: { ja: "メジロライアン", en: "Mejiro Ryan" }
     date: "04/11"
-  - name: { ja: "メジロラモーヌ", en: "" }
+  - name: { ja: "メジロラモーヌ", en: "Mejiro Ramonu" }
     date: "04/09"
-  - name: { ja: "ヤエノムテキ", en: "" }
+  - name: { ja: "ヤエノムテキ", en: "Yaeno Muteki" }
     date: "04/11"
-  - name: { ja: "ヤマニンゼファー", en: "" }
+  - name: { ja: "ヤマニンゼファー", en: "Yamanin Zephyr" }
     date: "05/27"
-  - name: { ja: "ユキノビジン", en: "" }
+  - name: { ja: "ユキノビジン", en: "Yukino Bijin" }
     date: "03/10"
-  - name: { ja: "ライスシャワー", en: "" }
+  - name: { ja: "ライスシャワー", en: "Rice Shower" }
     date: "03/05"
-  - name: { ja: "ワンダーアキュート", en: "" }
+  - name: { ja: "ワンダーアキュート", en: "Wonder Acute" }
     date: "03/14"
