@@ -8,7 +8,6 @@ on:
     paths:
       - .github/workflows/**.yaml
       - src/**
-      - data/**.yaml
 
 jobs:
   validate:
@@ -21,16 +20,16 @@ jobs:
           node-version: "18"
       - name: Test
         run: |
-          cd "${GITHUB_WORKSPACE}/src/app"
+          cd "${GITHUB_WORKSPACE}/src"
           npm install
           npm run lint
           npm run test
-      - name: Generate Calendar
+      - name: Create Calendar
         run: |
-          cd "${GITHUB_WORKSPACE}/src/app"
-          npm run generate
+          cd "${GITHUB_WORKSPACE}/src"
+          npm run execute
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: calendars
-          path: src/app/dist/*
+          path: src/dist/*
