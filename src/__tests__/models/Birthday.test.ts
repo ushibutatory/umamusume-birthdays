@@ -1,15 +1,9 @@
 import { Birthday } from "../../ts/models/Birthday";
+import 
 
 describe("Birthday", () => {
-  test("can parse yaml text.", () => {
-    // 入力テキスト
-    const yamlText = `
-birthdays:
-  - name: "sample1"
-    date: "01/01"
-  - name: "sample2"
-    date: "01/02"
-`;
+    test("Read and Parse yaml text.", () => {
+      const generator = new Generator()
 
     // 期待する結果
     const expects = [
@@ -19,7 +13,7 @@ birthdays:
 
     const birthdays = Birthday.parse(yamlText);
     expects.forEach((birthday, index) => {
-      expect(birthday.name).toBe(birthdays[index].name);
+      expect(birthday.name_ja).toBe(birthdays[index].name_ja);
       expect(birthday.date).toBe(birthdays[index].date);
     });
   });

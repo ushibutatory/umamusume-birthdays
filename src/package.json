@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "tsc": "tsc",
-    "generate": "ts-node ts/generator.ts",
+    "execute": "ts-node ts/app.ts",
     "ts-node": "ts-node",
     "format": "prettier --write **/*.{ts,json,yaml}",
     "lint": "eslint . --ext .ts",

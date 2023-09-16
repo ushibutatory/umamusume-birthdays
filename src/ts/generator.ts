@@ -1,109 +1,40 @@
-import fs, { WriteFileOptions } from "fs";
 import moment from "moment";
-import { Constants } from "./consts";
 import { Birthday } from "./models/Birthday";
 import { CalendarEvent } from "./models/CalendarEvent";
-import { Playables } from "./models/Playable";
+import { Name } from "./models/Name";
 
 export class Generator {
-  // TODO: パス指定の方法がイマイチ
-  /**
-   * 元になるデータが格納されているディレクトリ
-   */
-  private readonly _resourceDirectory: string = "../master";
-
-  /**
-   * 配信用データを格納するディレクトリ
-   */
-  private readonly _publishDirectory: string = "dist/ja";
-
-  /**
-   * 一連の処理を実行します。
-   */
-  run(): void {
-    // データファイル読み込み
-    const birthdays = this.getBirthdays();
-    console.log("読み込んだ誕生日データは以下の通りです。");
-    console.log(birthdays);
-    const playables = this.getPlayables();
-    console.log("読み込んだ育成可能キャラデータは以下の通りです。");
-    console.log(playables);
-
-    // iCalendar形式でファイル生成
-    if (!fs.existsSync(this._publishDirectory)) {
-      fs.mkdirSync(this._publishDirectory, { recursive: true });
-    }
-    const options: WriteFileOptions = {
-      encoding: "utf-8",
-    };
-
-    // 全ウマ娘
-    fs.writeFileSync(
-      `${this._publishDirectory}/${Constants.CalendarFileName.All}`,
-      this.generateICalendar(birthdays),
-      options
-    );
-
-    // 育成可能なウマ娘
-    fs.writeFileSync(
-      `${this._publishDirectory}/${Constants.CalendarFileName.Playables}`,
-      this.generateICalendar(
-        birthdays.filter((birthday) => playables.names.includes(birthday.name))
-      ),
-      options
-    );
-  }
-
-  /**
-   * 誕生日リストを読み込みます。
-   */
-  getBirthdays(): Birthday[] {
-    return Birthday.parse(
-      fs.readFileSync(
-        `${this._resourceDirectory}/${Constants.DataFileName.Birthdays}`,
-        "utf-8"
-      )
-    );
-  }
-
-  /**
-   * 育成可能キャラ名リストを読み込みます。
-   */
-  getPlayables(): Playables {
-    return Playables.parse(
-      fs.readFileSync(
-        `${this._resourceDirectory}/${Constants.DataFileName.Playables}`,
-        "utf-8"
-      )
-    );
-  }
-
   /**
    * 誕生日カレンダーファイルデータを生成します。
    */
-  generateICalendar(birthdays: Birthday[]): string {
+  public generateICalendar(birthdays: Birthday[], lang: keyof Name): string {
     const NEWLINE = "\r\n";
     const timestamp = moment().format("YYYYMMDDTHHmmssZ");
     const events = birthdays.map((birthday: Birthday) => {
-      const event = new CalendarEvent(birthday.name, birthday.date);
-      const _ = [];
-      _.push("BEGIN:VEVENT");
+      const name = birthday.name[lang];
+      if (name) {
+        const event = new CalendarEvent(name, birthday.date);
+        const _ = [];
+        _.push("BEGIN:VEVENT");
 
-      _.push("CLASS:PUBLIC");
-      _.push(`UID:${event.uniqueId}`);
-      _.push(`DTSTAMP:${timestamp}`);
-      _.push(`SUMMARY:${event.name}の誕生日`);
-      _.push(`DESCRIPTION:${event.name}の誕生日です。`);
-      _.push(`RRULE:FREQ=YEARLY`);
-      _.push(`DTSTART;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`);
-      _.push(
-        `DTEND;VALUE=DATE:${moment(event.datetime)
-          .add(1, "days") // RFC5545により、DTENDは翌日を指定する
-          .format("YYYYMMDD")}`
-      );
+        _.push("CLASS:PUBLIC");
+        _.push(`UID:${event.uniqueId}`);
+        _.push(`DTSTAMP:${timestamp}`);
+        _.push(`SUMMARY:${event.name}の誕生日`);
+        _.push(`DESCRIPTION:${event.name}の誕生日です。`);
+        _.push(`RRULE:FREQ=YEARLY`);
+        _.push(
+          `DTSTART;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`
+        );
+        _.push(
+          `DTEND;VALUE=DATE:${moment(event.datetime)
+            .add(1, "days") // RFC5545により、DTENDは翌日を指定する
+            .format("YYYYMMDD")}`
+        );
 
-      _.push("END:VEVENT");
-      return _.join(NEWLINE);
+        _.push("END:VEVENT");
+        return _.join(NEWLINE);
+      }
     });
 
     // iCalendar形式のカレンダーを生成
@@ -132,5 +63,3 @@ export class Generator {
     return iCal.join(NEWLINE);
   }
 }
-
-new Generator().run();
