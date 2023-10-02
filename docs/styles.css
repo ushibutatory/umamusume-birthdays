@@ -1,0 +1,10 @@
+footer {
+  margin: 1rem;
+}
+
+.card-deck {
+  margin: 1rem;
+}
+.card {
+  max-width: 32rem;
+}
