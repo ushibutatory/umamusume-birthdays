@@ -14,10 +14,6 @@
       src="https://kit.fontawesome.com/e51ffff573.js"
       crossorigin="anonymous"
     ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/css/flag-icons.min.css"
-    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -37,9 +33,24 @@
         </ul>
       </div>
     </nav>
-    <div id="calendars" class="container">
+    <div class="container">
       <h2>配信中のカレンダー</h2>
-      <!-- load by script -->
+      <div class="table-responsive">
+        <table id="calendars" class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Language</th>
+              <th scope="col">Content</th>
+              <th scope="col">URL</th>
+              <th scope="col">Copy</th>
+              <th scope="col">Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- load by script -->
+          </tbody>
+        </table>
+      </div>
     </div>
     <div class="container">
       <h2>外部リンク</h2>

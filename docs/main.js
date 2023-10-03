@@ -1,71 +1,77 @@
 (() => {
-  function createCards(lang, flag, data) {
+  function createCards(language, data) {
     const root = "https://umamusume-birthdays.ushibutatory.net/";
 
-    const $calendars = $("#calendars");
-
-    const title = document.createElement("h3");
-    title.innerHTML = `<i class="fi fi-${flag}"></i>${lang}`;
-    $calendars.append(title);
-
-    const cardDeck = document.createElement("div");
-    cardDeck.classList = "card-deck row";
-    data.forEach((_) => {
+    const $tbody = $("#calendars tbody");
+    data.forEach((_, index) => {
       const calendarUrl = `${root}${_.src}`;
-
-      cardDeck.append(
+      $tbody.append(
         (() => {
-          const card = document.createElement("div");
-          card.classList = "card";
-          card.append(
+          const tr = document.createElement("tr");
+          if (index === 0) {
+            tr.append(
+              (() => {
+                const lang = document.createElement("td");
+                lang.innerText = language;
+                lang.rowSpan = data.length;
+                return lang;
+              })()
+            );
+          }
+          tr.append(
             (() => {
-              const header = document.createElement("div");
-              header.classList = "card-header bg-transparent";
-              header.innerText = _.text;
-              return header;
-            })(),
+              const content = document.createElement("td");
+              content.innerText = _.text;
+              return content;
+            })()
+          );
+          tr.append(
             (() => {
-              const body = document.createElement("div");
-              body.classList = "card-body";
-              body.innerText = calendarUrl;
-              return body;
-            })(),
+              const url = document.createElement("td");
+              url.innerText = calendarUrl;
+              return url;
+            })()
+          );
+          tr.append(
             (() => {
-              const footer = document.createElement("div");
-              footer.classList = "card-footer border-0 bg-transparent";
+              const copy = document.createElement("td");
 
               const btnCopy = document.createElement("button");
               btnCopy.classList = "btn";
-              btnCopy.innerHTML = "<i class='far fa-copy'></i> Copy";
+              btnCopy.innerHTML = "<i class='far fa-copy'></i>";
               btnCopy.addEventListener("click", () => {
                 navigator.clipboard.writeText(calendarUrl);
-                btnCopy.innerHTML = "<i class='fas fa-check'></i> Copied!";
+                btnCopy.innerHTML = "<i class='fas fa-check'></i>";
                 setTimeout(() => {
-                  btnCopy.innerHTML = "<i class='far fa-copy'></i> Copy";
+                  btnCopy.innerHTML = "<i class='far fa-copy'></i>";
                 }, 1000);
               });
-              footer.append(btnCopy);
+              copy.append(btnCopy);
+
+              return copy;
+            })()
+          );
+          tr.append(
+            (() => {
+              const download = document.createElement("td");
 
               const btnDownload = document.createElement("a");
               btnDownload.classList = "btn";
-              btnDownload.innerHTML =
-                "<i class='fas fa-download'></i> Download";
+              btnDownload.innerHTML = "<i class='fas fa-download'></i>";
               btnDownload.href = calendarUrl;
               btnDownload.setAttribute("download", calendarUrl);
-              footer.append(btnDownload);
+              download.append(btnDownload);
 
-              return footer;
+              return download;
             })()
           );
-
-          return card;
+          return tr;
         })()
       );
     });
-    $calendars.append(cardDeck);
   }
 
-  createCards("日本語", "jp", [
+  createCards("日本語", [
     {
       text: "全てのウマ娘",
       src: "ja/birthdays.ics",
@@ -75,7 +81,7 @@
       src: "ja/birthdays_p.ics",
     },
   ]);
-  createCards("English", "us", [
+  createCards("English", [
     {
       text: "Everyone",
       src: "en/birthdays.ics",
