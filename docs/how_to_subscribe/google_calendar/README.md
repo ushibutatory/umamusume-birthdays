@@ -6,7 +6,7 @@
 
    ![URLで追加(1)](images/import_1.png)
 
-2. 上記 URL を登録します。
+2. カレンダーの URL を登録します。
 
    ![URLで追加(2)](images/import_2.png)
 
