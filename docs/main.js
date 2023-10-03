@@ -41,10 +41,15 @@
               btnCopy.innerHTML = "<i class='far fa-copy'></i>";
               btnCopy.addEventListener("click", () => {
                 navigator.clipboard.writeText(calendarUrl);
+                // コピーしたことを表示
+                btnCopy.classList = "btn btn-success";
                 btnCopy.innerHTML = "<i class='fas fa-check'></i>";
+
+                // 元に戻す
                 setTimeout(() => {
+                  btnCopy.classList = "btn";
                   btnCopy.innerHTML = "<i class='far fa-copy'></i>";
-                }, 1000);
+                }, 500);
               });
               copy.append(btnCopy);
 
