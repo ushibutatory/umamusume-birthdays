@@ -1,3 +1,7 @@
+.contents {
+  margin-top: 1rem;
+}
+
 h2 {
   display: inline-block;
   width: 100%;
@@ -6,6 +10,7 @@ h2 {
 
 #imgSample {
   padding: 0.5rem;
+  max-width: 75%;
 }
 
 footer {
