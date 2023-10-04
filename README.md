@@ -24,11 +24,10 @@
 
 ## 更新履歴
 
-[![Deploy](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/deploy-prod.yaml/badge.svg)](https://github.com/ushibutatory/umamusume-birthdays/actions/workflows/deploy-prod.yaml)
+- 2023/10/05: カレンダー URL の変更（ホスティングサービスの移管に伴い）
 
 ## リンク
 
 - [キャラクター一覧 | ウマ娘プリティーダービー](https://umamusume.jp/character/)
   - 公式ページ。
-  - 2023/09/10 時点の状態を反映しています。
-    - 誕生日が記載されているキャラクターのみ登録しています。
+  - 誕生日が記載されているキャラクターのみ登録しています。
