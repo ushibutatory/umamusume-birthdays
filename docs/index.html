@@ -14,119 +14,90 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-md sticky-top bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">ウマ娘 誕生日カレンダー</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navItems"
-            aria-controls="navItems"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div id="navItems" class="collapse navbar-collapse">
-            <div class="navbar-nav">
-              <a class="nav-link" href="#title-about">概要</a>
-              <a class="nav-link" href="#title-calendars">配信中のカレンダー</a>
-              <a class="nav-link" href="#title-howToUse">設定方法</a>
-              <a class="nav-link" href="#title-links"> 外部リンク </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <div class="contents">
-      <div class="container">
-        <h2 id="title-about">概要</h2>
-        <div>
-          <p>ウマ娘の誕生日を iCal 形式で配信しています。</p>
-          <p>
-            <img id="imgSample" class="img-fluid" src="./images/sample_image.png" />
-          </p>
-          <p>
-            <a
-              href="https://calendar.google.com/calendar/embed?src=83epnukgujhnm6qh4g9c95o036pv2gin%40import.calendar.google.com&ctz=Asia%2FTokyo"
-              target="_blank"
-              >ブラウザで確認する</a
-            >
-            <span>（※Google Calendar のプレビューページに遷移します。）</span>
-          </p>
-        </div>
-        <div>
-          <p class="fw-bold">※非公式です。 権利等で問題があれば即刻対応しますので下記までご連絡ください。</p>
-          <p>
-            不備・誤り・ご指摘などあれば Issues を作成するか、下記アカウントまで DM やメンションにてご連絡ください。
-          </p>
-        </div>
-      </div>
-      <div class="container">
-        <h2 id="title-calendars">配信中のカレンダー</h2>
-        <div class="table-responsive">
-          <table id="calendars" class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Language</th>
-                <th scope="col">Content</th>
-                <th scope="col">URL</th>
-                <th scope="col">Copy</th>
-                <th scope="col">Download</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- load by script -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="container">
-        <h2 id="title-howToUse">設定方法</h2>
-        <div>
-          <ul class="list-group">
-            <li class="list-group-item border-0 list-group-item-action">
-              <a href="./how_to_subscribe/google_calendar/index.html">Google Calendar</a>
-            </li>
-            <li class="list-group-item border-0 list-group-item-action">
-              <a href="./how_to_subscribe/thunderbird/index.html">Thunderbird</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <p>その他、URLを指定して追加する機能があれば大抵のカレンダーアプリで購読可能なはずです。</p>
-          <p>
-            また、上記 URL
-            からダウンロードした.icsファイルに適当な名前を付けて保存し、カレンダーアプリに取り込むこともできます。
-            （ただしその場合、追加や更新された誕生日は自動では反映されません。手動で取り込みなおす必要があります。）
-          </p>
-          <p>気になる点や不明点、ご質問などあれば下記アカウントまでご連絡ください。</p>
-        </div>
-      </div>
-      <div class="container">
-        <h2 id="title-links">外部リンク</h2>
-        <div class="list-group">
+    <nav id="nav"></nav>
+    <div class="container">
+      <h2 id="title-about">概要</h2>
+      <div>
+        <p>ウマ娘の誕生日を iCal 形式で配信しています。</p>
+        <p>
+          <img id="imgSample" class="img-fluid" src="./images/sample_image.png" />
+        </p>
+        <p>
           <a
-            class="list-group-item border-0 list-group-item-action"
-            href="https://github.com/ushibutatory/umamusume-birthdays"
+            href="https://calendar.google.com/calendar/embed?src=83epnukgujhnm6qh4g9c95o036pv2gin%40import.calendar.google.com&ctz=Asia%2FTokyo"
             target="_blank"
+            >ブラウザで確認する</a
           >
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a
-            class="list-group-item border-0 list-group-item-action"
-            href="https://twitter.com/ushibutatory"
-            target="_blank"
-          >
-            <i class="fab fa-x-twitter"></i> ( <i class="fab fa-twitter"></i> ) @ushibutatory
-          </a>
-          <a class="list-group-item border-0 list-group-item-action" href="https://umamusume.jp/" target="_blank">
-            <i class="fas fa-globe"></i>
-            <span>ウマ娘 プリティーダービー 公式ポータルサイト | Cygames</span>
-          </a>
-        </div>
+          <span>（※Google Calendar のプレビューページに遷移します。）</span>
+        </p>
+      </div>
+      <div>
+        <p class="fw-bold">※非公式です。 権利等で問題があれば即刻対応しますので下記までご連絡ください。</p>
+        <p>不備・誤り・ご指摘などあれば Issues を作成するか、下記アカウントまで DM やメンションにてご連絡ください。</p>
+      </div>
+    </div>
+    <div class="container">
+      <h2 id="title-calendars">配信中のカレンダー</h2>
+      <div class="table-responsive">
+        <table id="calendars" class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Language</th>
+              <th scope="col">Content</th>
+              <th scope="col">URL</th>
+              <th scope="col">Copy</th>
+              <th scope="col">Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- load by script -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container">
+      <h2 id="title-howToUse">設定方法</h2>
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item border-0 list-group-item-action">
+            <a href="./how_to_subscribe/index.html#ex-google_calendar">Google Calendar</a>
+          </li>
+          <li class="list-group-item border-0 list-group-item-action">
+            <a href="./how_to_subscribe/index.html#thunderbird">Thunderbird</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>その他、URLを指定して追加する機能があれば大抵のカレンダーアプリで購読可能なはずです。</p>
+        <p>
+          また、上記 URL
+          からダウンロードした.icsファイルに適当な名前を付けて保存し、カレンダーアプリに取り込むこともできます。
+          （ただしその場合、追加や更新された誕生日は自動では反映されません。手動で取り込みなおす必要があります。）
+        </p>
+        <p>気になる点や不明点、ご質問などあれば下記アカウントまでご連絡ください。</p>
+      </div>
+    </div>
+    <div class="container">
+      <h2 id="title-links">外部リンク</h2>
+      <div class="list-group">
+        <a
+          class="list-group-item border-0 list-group-item-action"
+          href="https://github.com/ushibutatory/umamusume-birthdays"
+          target="_blank"
+        >
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a
+          class="list-group-item border-0 list-group-item-action"
+          href="https://twitter.com/ushibutatory"
+          target="_blank"
+        >
+          <i class="fab fa-x-twitter"></i> ( <i class="fab fa-twitter"></i> ) @ushibutatory
+        </a>
+        <a class="list-group-item border-0 list-group-item-action" href="https://umamusume.jp/" target="_blank">
+          <i class="fas fa-globe"></i>
+          <span>ウマ娘 プリティーダービー 公式ポータルサイト | Cygames</span>
+        </a>
       </div>
     </div>
     <footer class="footer container">
@@ -147,6 +118,11 @@
       integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
       crossorigin="anonymous"
     ></script>
+    <script>
+      (() => {
+        $("#nav").load("nav.html");
+      })();
+    </script>
     <script src="./main.js"></script>
   </body>
 </html>

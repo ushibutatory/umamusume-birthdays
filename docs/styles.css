@@ -1,5 +1,5 @@
-.contents {
-  margin-top: 1rem;
+nav {
+  margin-bottom: 1rem;
 }
 
 h2 {
@@ -11,6 +11,13 @@ h2 {
 #imgSample {
   padding: 0.5rem;
   max-width: 75%;
+}
+
+div.step {
+  margin: 1rem;
+}
+div.step img {
+  margin: 1rem;
 }
 
 footer {
