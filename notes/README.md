@@ -4,13 +4,15 @@
 
 ![overview](overview.drawio.svg)
 
-## ローカルでの動作確認
+## カスタムドメインの管理
 
-### カレンダーデータの更新
+- Route53
+
+## カレンダーデータの更新
 
 ```sh
-umamusume-birthdays> cd src\app
-umamusume-birthdays\src\app> npm run generate
+> npm run execute
 ```
 
-※更新した iCal ファイルはコミットしない（gitignore 対象追加済み）
+生成された .ics ファイルを `/docs` （GitHub Pages）配下にコピーし、Commit する。
+（※src 配下の .ics ファイルはコミットしない）
