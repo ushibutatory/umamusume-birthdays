@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Google Calendar の設定 - ウマ娘誕生日カレンダー</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <nav id="nav"></nav>
+    <div class="container">
+      <h2 id="title-about">カレンダーの設定方法</h2>
+      <p>※設定後、予定が表示・更新されるまで少し時間がかかる場合があります。</p>
+      <div class="container">
+        <h3 id="ex-google_calendar">Google Calendar の設定</h3>
+        <div class="container">
+          <h4>Web ブラウザから操作する場合</h4>
+          <div class="step">
+            <h5>1. [設定] - [カレンダーを追加] - [URL で追加]</h5>
+            <img class="img-fluid" src="./google_calendar/images/import_1.png" />
+          </div>
+          <div class="step">
+            <h5>2. カレンダーの URL を入力し、[カレンダーを追加]</h5>
+            <img class="img-fluid" src="./google_calendar/images/import_2.png" />
+          </div>
+          <div class="step">
+            <h5>3. カレンダー名や色、通知などをお好みで変更してください。</h5>
+            <img class="img-fluid" src="./google_calendar/images/import_3.png" />
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <h3 id="ex-thunderbird">Thunderbird の設定</h3>
+        <div class="container">
+          <h4>for Windows</h4>
+          <div class="step">
+            <h5>1. [カレンダー] - [新しいカレンダー]</h5>
+            <img class="img-fluid" src="./thunderbird/images/import_1.png" />
+          </div>
+          <div class="step">
+            <h5>2. iCalendar 形式で当カレンダーの URL を指定します。</h5>
+            <img class="img-fluid" src="./thunderbird/images/import_2.png" />
+          </div>
+          <div class="step">
+            <h5>3. カレンダー名や色、通知などをお好みで変更してください。</h5>
+            <img class="img-fluid" src="./thunderbird/images/import_3.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer container">
+      <span class="text-secondary">&copy;2023 - ushibutatory, CyGames</span>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      (() => {
+        $("#nav").load("../nav.html");
+      })();
+    </script>
+  </body>
+</html>

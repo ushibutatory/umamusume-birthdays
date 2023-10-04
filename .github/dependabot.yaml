@@ -1,9 +1,13 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/src/app/"
+    directory: "/src/"
     target-branch: "develop"
     schedule:
       interval: "monthly"
+    groups:
+      dependencies:
+        patterns:
+          - "*"
     reviewers:
       - "ushibutatory"
