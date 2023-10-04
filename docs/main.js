@@ -1,6 +1,6 @@
 (() => {
   function createCards(language, data) {
-    const root = "https://umamusume-birthdays.ushibutatory.net/";
+    const root = "https://umamusume-birthdays.ushibutatory.net/dist/";
 
     const $tbody = $("#calendars tbody");
     data.forEach((_, index) => {
