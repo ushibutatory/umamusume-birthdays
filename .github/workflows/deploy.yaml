@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - .github/workflows/deploy.yaml
+      - src/**
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup NodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - name: Create Calendar
+        run: |
+          cd "${GITHUB_WORKSPACE}/src"
+          npm install
+          npm run execute
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: calendars
+          path: src/dist/*
+      - name: Update dist directory
+        run: |
+          cp src/dist/* docs/dist -r -u
+          git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+          git add docs/dist/*
+          git commit -m "update: iCal files"
+          git push
