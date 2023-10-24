@@ -1,15 +1,15 @@
-name: Deploy
+name: Update Calendar
 
 on:
   push:
     branches:
-      - "main"
+      - "develop"
     paths:
       - .github/workflows/deploy.yaml
       - src/**
 
 jobs:
-  deploy:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
