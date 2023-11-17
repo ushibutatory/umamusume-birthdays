@@ -15,6 +15,10 @@ birthdays:
     date: "05/07"
   - name: { ja: "ウイニングチケット", en: "Winning Ticket" }
     date: "03/21"
+  - name: { ja: "ヴィブロス", en: "Vivlos" }
+    date: "04/09"
+  - name: { ja: "ヴェルシーナ", en: "Verxina" }
+    date: "03/05"
   - name: { ja: "ウオッカ", en: "Vodka" }
     date: "04/04"
   - name: { ja: "エアシャカール", en: "Air Shakur" }
@@ -105,10 +109,14 @@ birthdays:
     date: "04/13"
   - name: { ja: "ツルマルツヨシ", en: "Tsurumaru Tsuyoshi" }
     date: "04/06"
+  - name: { ja: "デアリングタクト", en: "Daring Tack" }
+    date: "04/15"
   - name: { ja: "テイエムオペラオー", en: "T.M.Opera O" }
     date: "03/13"
   - name: { ja: "トウカイテイオー", en: "Tokai Teio" }
     date: "04/20"
+  - name: { ja: "ドゥラメンテ", en: "Duramente" }
+    date: "03/22"
   - name: { ja: "トーセンジョーダン", en: "Tosen Jordan" }
     date: "02/04"
   - name: { ja: "ナイスネイチャ", en: "Nice Nature" }
@@ -125,6 +133,8 @@ birthdays:
     date: "04/19"
   - name: { ja: "ネオユニヴァース", en: "Neo Universe" }
     date: "05/21"
+  - name: { ja: "ノースフライト", en: "North Flight" }
+    date: "04/12"
   - name: { ja: "ハルウララ", en: "Haru Urara" }
     date: "02/27"
   - name: { ja: "バンブーメモリー", en: "Bamboo Memory" }
