@@ -8,7 +8,7 @@
     "execute": "ts-node ts/app.ts",
     "ts-node": "ts-node",
     "format": "prettier --write **/*.{ts,json,yaml}",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint -c eslint.config.mjs",
     "test": "jest --coverage --slient=false"
   },
   "keywords": [],
