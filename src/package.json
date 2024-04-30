@@ -9,7 +9,6 @@
     "ts-node": "ts-node",
     "format": "prettier --write **/*.{ts,json,yaml}",
     "lint": "eslint . --ext .ts",
-    "lint--fix": "eslint . --ext .ts --fix",
     "test": "jest --coverage --slient=false"
   },
   "keywords": [],
