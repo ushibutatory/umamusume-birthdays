@@ -8,6 +8,10 @@ export default [
   // Target files
   {
     files: ["**/*.ts"],
+  },
+
+  // Ignore files
+  {
     ignores: ["**/node_modules/**", "**/dist/**", "**/coverage/**"],
   },
 
