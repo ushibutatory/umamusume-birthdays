@@ -38,13 +38,13 @@ export class Writer {
       const directory = path.join(this._distDirectory, lang);
 
       if (!fs.existsSync(directory)) {
-        console.info(`📁 Creating directory: ${directory}`);
+        console.info(`📁 ディレクトリを作成しました。: ${directory}`);
         fs.mkdirSync(directory, { recursive: true });
       }
 
       const filePath = path.join(directory, fileName);
       fs.writeFileSync(filePath, iCalendarString, { encoding: "utf-8" });
-      console.info(`✅ Successfully wrote file: ${filePath}`);
+      console.info(`✅ ファイルを作成しました。: ${filePath}`);
     } catch (error) {
       if (error instanceof Error) {
         throw new Error(`Failed to write file ${fileName}: ${error.message}`);

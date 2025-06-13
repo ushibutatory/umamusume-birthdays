@@ -20,9 +20,11 @@ export class Application {
 
     const writer = new Writer();
     const generator = new Generator();
-    const langs = Object.keys({} as Name) as (keyof Name)[];
+    const langs = ["ja", "en"] as const satisfies readonly (keyof Name)[];
 
     langs.forEach((lang) => {
+      console.log(`対象言語: ${lang}`);
+
       // データファイルをiCalendar形式の文字列に変換して書き込み
       // 全員
       const iCalendar_all = generator.generateICalendar(birthdays, lang);
