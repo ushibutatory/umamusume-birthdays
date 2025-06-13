@@ -6,7 +6,7 @@ on:
       - "develop"
     paths:
       - .github/workflows/deploy.yaml
-      - src/**
+      - apps/generator/**
 
 jobs:
   update:
@@ -19,17 +19,17 @@ jobs:
           node-version: "18"
       - name: Create Calendar
         run: |
-          cd "${GITHUB_WORKSPACE}/src"
           npm install
           npm run execute
+        working-directory: "./apps/generator"
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: calendars
-          path: src/dist/*
+          path: ./apps/generator/dist/*
       - name: Update dist directory
         run: |
-          cp src/dist/* docs/dist -r -u
+          cp apps/generator/dist/* docs/dist -r -u
           git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
           git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
           git add docs/dist/*

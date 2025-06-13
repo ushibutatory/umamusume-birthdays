@@ -1,5 +1,5 @@
 import moment from "moment";
-import { CalendarEvent } from "../../ts/models/CalendarEvent";
+import { CalendarEvent } from "../../src/models/CalendarEvent";
 
 describe("CalendarEvent", () => {
   const name = "test";

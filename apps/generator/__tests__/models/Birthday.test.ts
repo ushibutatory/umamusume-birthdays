@@ -1,4 +1,4 @@
-import { Birthday } from "../../ts/models/Birthday";
+import { Birthday } from "../../src/models/Birthday";
 
 describe("Birthday", () => {
   test("Read and parse yaml text.", () => {
