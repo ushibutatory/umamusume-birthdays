@@ -11,18 +11,22 @@ export class Reader {
   /**
    * 元になるデータが格納されているディレクトリ
    */
-  private readonly _masterDirectory: string;
+  private readonly _dataDirectory: string;
 
-  constructor(masterDirectory: string = "master") {
-    if (!masterDirectory.trim()) {
+  constructor(dataDirectoryName: string = "data") {
+    if (!dataDirectoryName.trim()) {
       throw new Error("Master directory path cannot be empty");
     }
-    this._masterDirectory = masterDirectory;
+    this._dataDirectory = path.resolve(
+      __dirname,
+      "../../../", // 上位ディレクトリに移動
+      dataDirectoryName
+    );
 
     // ディレクトリの存在確認
-    if (!fs.existsSync(this._masterDirectory)) {
+    if (!fs.existsSync(this._dataDirectory)) {
       throw new Error(
-        `Master directory does not exist: ${this._masterDirectory}`
+        `Master directory does not exist: ${this._dataDirectory}`
       );
     }
   }
@@ -50,7 +54,7 @@ export class Reader {
    * @throws {Error} ファイルが存在しない、読み込み失敗、またはパース失敗時
    */
   private readAndParse<T>(fileName: string, parser: (content: string) => T): T {
-    const filePath = path.join(this._masterDirectory, fileName);
+    const filePath = path.join(this._dataDirectory, fileName);
 
     try {
       // ファイル存在チェック
