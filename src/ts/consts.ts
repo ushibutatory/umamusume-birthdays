@@ -1,34 +1,31 @@
 /**
  * 定数
  */
-export class Constants {
+export const Consts = {
   /**
    * データファイル名
    */
-  public static MasterFileName = class {
+  MasterFileName: {
     /**
      * 誕生日リスト
      */
-    public static readonly Birthdays: string = "birthdays.yaml";
-
+    Birthdays: "birthdays.yaml",
     /**
      * 育成可能ウマ娘リスト
      */
-    public static readonly Playables: string = "playables.yaml";
-  };
-
+    Playables: "playables.yaml",
+  },
   /**
    * カレンダーファイル名
    */
-  public static CalendarFileName = class {
+  CalendarFileName: {
     /**
      * 全ウマ娘
      */
-    public static readonly All: string = "birthdays.ics";
-
+    All: "birthdays.ics",
     /**
      * 育成可能ウマ娘
      */
-    public static readonly Playables: string = "birthdays_p.ics";
-  };
-}
+    Playables: "birthdays_p.ics",
+  },
+} as const;

@@ -4,49 +4,53 @@ import { CalendarEvent } from "./models/CalendarEvent";
 import { Name } from "./models/Name";
 
 export class Generator {
+  private static readonly CONSTS = {
+    PROD_ID: "ushibutatory-umamusume-birthdays-calendar",
+    TIMEZONE: "Asia/Tokyo",
+    NEWLINE: "\r\n",
+  } as const;
+
   /**
    * 誕生日カレンダーファイルデータを生成します。
    */
   public generateICalendar(birthdays: Birthday[], lang: keyof Name): string {
-    const NEWLINE = "\r\n";
     const timestamp = moment().format("YYYYMMDDTHHmmssZ");
     const events = birthdays
       .filter((_) => _.name[lang])
       .map((birthday: Birthday) => {
         const name = birthday.name[lang];
         const event = new CalendarEvent(name, birthday.date);
-        const _ = [];
-        _.push("BEGIN:VEVENT");
+        const eventSection = [];
+        eventSection.push("BEGIN:VEVENT");
 
-        _.push("CLASS:PUBLIC");
-        _.push(`UID:${event.uniqueId}`);
-        _.push(`DTSTAMP:${timestamp}`);
-        _.push(`SUMMARY:${this._eventSummary(event, lang)}`);
-        _.push(`DESCRIPTION:${this._eventDescription(event, lang)}`);
-        _.push(`RRULE:FREQ=YEARLY`);
-        _.push(
+        eventSection.push("CLASS:PUBLIC");
+        eventSection.push(`UID:${event.uniqueId}`);
+        eventSection.push(`DTSTAMP:${timestamp}`);
+        eventSection.push(`SUMMARY:${this.eventSummary(event, lang)}`);
+        eventSection.push(`DESCRIPTION:${this.eventDescription(event, lang)}`);
+        eventSection.push(`RRULE:FREQ=YEARLY`);
+        eventSection.push(
           `DTSTART;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`
         );
-        _.push(
+        eventSection.push(
           `DTEND;VALUE=DATE:${moment(event.datetime)
             .add(1, "days") // RFC5545により、DTENDは翌日を指定する
             .format("YYYYMMDD")}`
         );
 
-        _.push("END:VEVENT");
-        return _.join(NEWLINE);
+        eventSection.push("END:VEVENT");
+        return eventSection.join(Generator.CONSTS.NEWLINE);
       });
 
     // iCalendar形式のカレンダーを生成
-    const _prodId = "ushibutatory-umamusume-birthdays-calendar";
     const iCal = [];
     iCal.push("BEGIN:VCALENDAR");
-    iCal.push(`PRODID:${_prodId}`);
+    iCal.push(`PRODID:${Generator.CONSTS.PROD_ID}`);
     iCal.push("VERSION:2.0");
     iCal.push("METHOD:PUBLISH");
     {
       iCal.push("BEGIN:VTIMEZONE");
-      iCal.push("TZID:Asia/Tokyo");
+      iCal.push(`TZID:${Generator.CONSTS.TIMEZONE}`);
       {
         iCal.push("BEGIN:STANDARD");
         iCal.push("DTSTART:19390101T000000");
@@ -57,31 +61,31 @@ export class Generator {
       }
       iCal.push("END:VTIMEZONE");
     }
-    iCal.push(events.join(NEWLINE));
+    iCal.push(events.join(Generator.CONSTS.NEWLINE));
     iCal.push("END:VCALENDAR");
 
-    return iCal.join(NEWLINE);
+    return iCal.join(Generator.CONSTS.NEWLINE);
   }
 
-  private _eventSummary(event: CalendarEvent, lang: keyof Name): string {
-    return (() => {
-      switch (lang) {
-        case "ja":
-          return `${event.name}の誕生日`;
-        case "en":
-          return `${event.name}'s Birthday`;
-      }
-    })();
+  private eventSummary(event: CalendarEvent, lang: keyof Name): string {
+    switch (lang) {
+      case "ja":
+        return `${event.name}の誕生日`;
+      case "en":
+        return `${event.name}'s Birthday`;
+      default:
+        throw new Error(`Unsupported language: ${lang}`);
+    }
   }
 
-  private _eventDescription(event: CalendarEvent, lang: keyof Name): string {
-    return (() => {
-      switch (lang) {
-        case "ja":
-          return `${event.name}の誕生日です。`;
-        case "en":
-          return `${event.name}'s Birthday`;
-      }
-    })();
+  private eventDescription(event: CalendarEvent, lang: keyof Name): string {
+    switch (lang) {
+      case "ja":
+        return `${event.name}の誕生日です。`;
+      case "en":
+        return `${event.name}'s Birthday`;
+      default:
+        throw new Error(`Unsupported language: ${lang}`);
+    }
   }
 }

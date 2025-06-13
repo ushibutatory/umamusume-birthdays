@@ -3,13 +3,7 @@ import js from "@eslint/js";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import typescriptEslintParser from "@typescript-eslint/parser";
 
-/** @type {import("eslint").Linter.FlatConfig[]} */
 export default [
-  // Target files
-  {
-    files: ["**/*.ts"],
-  },
-
   // Ignore files
   {
     ignores: ["**/node_modules/**", "**/dist/**", "**/coverage/**"],
@@ -18,18 +12,20 @@ export default [
   // Use eslint recommended rule
   js.configs.recommended,
 
-  // Parser for TypeScript
+  // TypeScript configuration
   {
+    files: ["**/*.ts"],
     languageOptions: {
       parser: typescriptEslintParser,
+      parserOptions: {
+        ecmaVersion: 2022,
+        sourceType: "module",
+        project: "./tsconfig.eslint.json",
+      },
       globals: {
         ...globals.node,
       },
     },
-  },
-
-  // Plugin for TypeScript
-  {
     plugins: {
       "@typescript-eslint": typescriptEslint,
     },
