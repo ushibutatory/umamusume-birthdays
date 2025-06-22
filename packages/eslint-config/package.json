@@ -7,13 +7,17 @@
     "./base": "./base.mjs",
     "./typescript": "./typescript.mjs"
   },
-  "files": [
-    "*.mjs"
-  ],
+  "files": ["*.mjs"],
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint"
+  },
   "dependencies": {
     "@eslint/js": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
-    "globals": "^15.0.0"
+    "globals": "^15.0.0",
+    "eslint-config-prettier": "^10.1.5"
   }
 }

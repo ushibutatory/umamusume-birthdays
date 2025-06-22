@@ -25,11 +25,7 @@ export class CalendarWriter {
    * @param fileName 出力ファイル名
    * @throws {Error} ファイル書き込みに失敗した場合
    */
-  public write(
-    iCalendarString: string,
-    lang: keyof Name,
-    fileName: string
-  ): void {
+  public write(iCalendarString: string, lang: keyof Name, fileName: string): void {
     if (!iCalendarString.trim()) {
       throw new Error("iCalendar string cannot be empty");
     }

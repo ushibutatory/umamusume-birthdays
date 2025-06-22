@@ -14,5 +14,5 @@
 > npm run execute
 ```
 
-生成された .ics ファイルを `/docs` （GitHub Pages）配下にコピーし、Commit する。
-（※src 配下の .ics ファイルはコミットしない）
+生成された .ics ファイルを `/docs` （GitHub
+Pages）配下にコピーし、Commit する。（※src 配下の .ics ファイルはコミットしない）

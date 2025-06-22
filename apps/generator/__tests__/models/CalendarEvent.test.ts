@@ -23,8 +23,6 @@ describe("CalendarEvent", () => {
   });
 
   test("generate unique id.", () => {
-    expect(event.uniqueId).toBe(
-      `${moment(datetime).format("YYYYMMDD")}-${name}`
-    );
+    expect(event.uniqueId).toBe(`${moment(datetime).format("YYYYMMDD")}-${name}`);
   });
 });

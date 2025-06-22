@@ -62,7 +62,7 @@ export class Application {
       // 育成可能のみ
       const iCalendar_playable = generator.generateICalendar(
         data.birthdays.filter((_) => data.playables.names.includes(_.name.ja)),
-        lang
+        lang,
       );
       writer.write(iCalendar_playable, lang, Consts.CalendarFileName.Playables);
     });

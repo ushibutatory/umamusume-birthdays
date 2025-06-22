@@ -20,7 +20,7 @@ export class MasterReader {
     this._dataDirectory = path.resolve(
       __dirname,
       "../../../../", // 上位ディレクトリに移動
-      dataDirectoryName
+      dataDirectoryName,
     );
 
     // ディレクトリの存在確認
