@@ -1,0 +1,5 @@
+// ESLint用に別ファイルで定義
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/**/*", "__tests__/**/*", "jest.config.ts", "*.config.ts"]
+}

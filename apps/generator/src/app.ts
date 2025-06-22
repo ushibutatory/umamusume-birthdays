@@ -1,4 +1,4 @@
-import { Constants } from "./consts";
+import { Consts } from "./consts";
 import { Generator } from "./generator";
 import { Name } from "./models/Name";
 import { Reader } from "./reader";
@@ -12,30 +12,30 @@ export class Application {
     // データファイル読み込み
     const reader = new Reader();
     const birthdays = reader.getBirthdays();
-    console.log("読み込んだ誕生日データは以下の通りです。");
-    console.log(birthdays);
+    console.info("読み込んだ誕生日データは以下の通りです。");
+    console.info(birthdays);
     const playables = reader.getPlayables();
-    console.log("読み込んだ育成可能キャラデータは以下の通りです。");
-    console.log(playables);
+    console.info("読み込んだ育成可能キャラデータは以下の通りです。");
+    console.info(playables);
 
     const writer = new Writer();
     const generator = new Generator();
-    new Array<keyof Name>("ja", "en").forEach((lang) => {
+    const langs = ["ja", "en"] as const satisfies readonly (keyof Name)[];
+
+    langs.forEach((lang) => {
+      console.log(`対象言語: ${lang}`);
+
       // データファイルをiCalendar形式の文字列に変換して書き込み
       // 全員
       const iCalendar_all = generator.generateICalendar(birthdays, lang);
-      writer.write(iCalendar_all, lang, Constants.CalendarFileName.All);
+      writer.write(iCalendar_all, lang, Consts.CalendarFileName.All);
 
       // 育成可能のみ
       const iCalendar_playable = generator.generateICalendar(
         birthdays.filter((_) => playables.names.includes(_.name.ja)),
         lang
       );
-      writer.write(
-        iCalendar_playable,
-        lang,
-        Constants.CalendarFileName.Playables
-      );
+      writer.write(iCalendar_playable, lang, Consts.CalendarFileName.Playables);
     });
   }
 }

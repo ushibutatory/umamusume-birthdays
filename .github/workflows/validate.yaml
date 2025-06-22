@@ -7,29 +7,29 @@ on:
       - "!main"
     paths:
       - .github/workflows/**.yaml
-      - src/**
+      - apps/generator/**
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup NodeJs
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
       - name: Test
         run: |
-          cd "${GITHUB_WORKSPACE}/src"
           npm install
           npm run lint
           npm run test
+        working-directory: "./apps/generator"
       - name: Create Calendar
         run: |
-          cd "${GITHUB_WORKSPACE}/src"
           npm run execute
+        working-directory: "./apps/generator"
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: calendars
-          path: src/dist/*
+          path: ./apps/generator/dist/*
