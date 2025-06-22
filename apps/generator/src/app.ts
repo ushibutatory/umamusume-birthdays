@@ -37,10 +37,7 @@ export class Application {
     console.info("💡読み込んだ育成可能キャラデータは以下の通りです。");
     console.info(playables);
 
-    return {
-      birthdays,
-      playables,
-    };
+    return { birthdays, playables };
   }
 
   /**
