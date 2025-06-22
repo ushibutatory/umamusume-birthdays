@@ -1,14 +1,17 @@
 import fs from "fs";
 import path from "path";
-import { Name } from "./models/Name";
+import { Name } from "@umamusume-birthdays/shared";
 
-export class Writer {
+/**
+ * カレンダー書き込みクラス
+ */
+export class CalendarWriter {
   /**
    * 配信用データを格納するディレクトリ
    */
   private readonly _distDirectory: string;
 
-  constructor(distDirectory: string = "dist") {
+  public constructor(distDirectory: string = "dist") {
     if (!distDirectory.trim()) {
       throw new Error("Distribution directory cannot be empty");
     }
@@ -22,11 +25,7 @@ export class Writer {
    * @param fileName 出力ファイル名
    * @throws {Error} ファイル書き込みに失敗した場合
    */
-  public write(
-    iCalendarString: string,
-    lang: keyof Name,
-    fileName: string
-  ): void {
+  public write(iCalendarString: string, lang: keyof Name, fileName: string): void {
     if (!iCalendarString.trim()) {
       throw new Error("iCalendar string cannot be empty");
     }

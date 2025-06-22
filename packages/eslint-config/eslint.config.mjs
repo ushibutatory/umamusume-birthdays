@@ -1,4 +1,4 @@
-import { base, typescript, jest } from "@umamusume-birthdays/eslint-config";
+import { base, typescript, jest } from "./index.mjs";
 
 export default [
   {

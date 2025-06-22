@@ -1,8 +1,10 @@
 import moment from "moment";
-import { Birthday } from "./models/Birthday";
+import { Birthday, Name } from "@umamusume-birthdays/shared";
 import { CalendarEvent } from "./models/CalendarEvent";
-import { Name } from "./models/Name";
 
+/**
+ * カレンダーファイルデータ生成クラス
+ */
 export class Generator {
   private static readonly CONSTS = {
     PROD_ID: "ushibutatory-umamusume-birthdays-calendar",
@@ -29,13 +31,11 @@ export class Generator {
         eventSection.push(`SUMMARY:${this.eventSummary(event, lang)}`);
         eventSection.push(`DESCRIPTION:${this.eventDescription(event, lang)}`);
         eventSection.push(`RRULE:FREQ=YEARLY`);
-        eventSection.push(
-          `DTSTART;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`
-        );
+        eventSection.push(`DTSTART;VALUE=DATE:${moment(event.datetime).format("YYYYMMDD")}`);
         eventSection.push(
           `DTEND;VALUE=DATE:${moment(event.datetime)
             .add(1, "days") // RFC5545により、DTENDは翌日を指定する
-            .format("YYYYMMDD")}`
+            .format("YYYYMMDD")}`,
         );
 
         eventSection.push("END:VEVENT");

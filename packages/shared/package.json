@@ -1,10 +1,14 @@
 {
-  "name": "@umamusume-birthdays/generator",
-  "version": "0.0.1",
+  "name": "@umamusume-birthdays/shared",
+  "version": "1.0.0",
   "description": "",
   "author": "ushibutatory",
   "license": "",
-  "main": "server.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -12,18 +16,14 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
-    "execute": "ts-node src/app.ts"
+    "test:watch": "jest --coverage --watch"
   },
   "dependencies": {
-    "@umamusume-birthdays/shared": "file:../../packages/shared",
-    "moment": "^2.30.1",
     "yaml": "^2.8.0"
   },
   "devDependencies": {
     "typescript": "^5.8.3",
     "@types/node": "^24.0.3",
-    "ts-node": "^10.9.2",
     "eslint": "^9.29.0",
     "@types/jest": "^30.0.0",
     "jest": "^30.0.2",

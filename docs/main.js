@@ -15,7 +15,7 @@
                 lang.innerText = language;
                 lang.rowSpan = data.length;
                 return lang;
-              })()
+              })(),
             );
           }
           tr.append(
@@ -23,14 +23,14 @@
               const content = document.createElement("td");
               content.innerText = _.text;
               return content;
-            })()
+            })(),
           );
           tr.append(
             (() => {
               const url = document.createElement("td");
               url.innerText = calendarUrl;
               return url;
-            })()
+            })(),
           );
           tr.append(
             (() => {
@@ -54,7 +54,7 @@
               copy.append(btnCopy);
 
               return copy;
-            })()
+            })(),
           );
           tr.append(
             (() => {
@@ -68,10 +68,10 @@
               download.append(btnDownload);
 
               return download;
-            })()
+            })(),
           );
           return tr;
-        })()
+        })(),
       );
     });
   }

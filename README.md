@@ -4,8 +4,7 @@
 
 ウマ娘の誕生日を iCal 形式で配信しています。
 
-- イメージ
-  ![image](docs/images/sample_image.png)
+- イメージ ![image](docs/images/sample_image.png)
 
 **※非公式です。**
 **権利等で問題があれば即刻対応しますので下記までご連絡ください。**
