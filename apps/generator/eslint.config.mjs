@@ -1,45 +1,27 @@
-import globals from "globals";
-import js from "@eslint/js";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import typescriptEslintParser from "@typescript-eslint/parser";
+import { base, typescript, jest } from "@umamusume-birthdays/eslint-config";
 
 export default [
-  // Ignore files
   {
-    ignores: ["**/node_modules/**", "**/dist/**", "**/coverage/**"],
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/coverage/**",
+      "eslint.config.mjs", // ESLint設定ファイル自体を除外
+      "jest.config.ts", // Jest設定ファイルを除外
+    ],
   },
 
-  // Use eslint recommended rule
-  js.configs.recommended,
+  // 共通の設定をインポート
+  ...base,
+  ...typescript,
+  ...jest,
 
-  // TypeScript configuration
-  {
-    files: ["**/*.ts"],
-    languageOptions: {
-      parser: typescriptEslintParser,
-      parserOptions: {
-        ecmaVersion: 2022,
-        sourceType: "module",
-        project: "./tsconfig.eslint.json",
-      },
-      globals: {
-        ...globals.node,
-      },
-    },
-    plugins: {
-      "@typescript-eslint": typescriptEslint,
-    },
-    rules: {
-      ...typescriptEslint.configs.recommended.rules,
-    },
-  },
-
-  // Settings for jest
+  // ESLint用の設定
   {
     files: ["**/__tests__/**"],
     languageOptions: {
-      globals: {
-        ...globals.jest,
+      parserOptions: {
+        project: "./tsconfig.eslint.json",
       },
     },
   },

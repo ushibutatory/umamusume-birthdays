@@ -5,12 +5,12 @@ import YAML from "yaml";
  * （YAMLファイルのデータ構造と対応）
  */
 export class Playables {
-  readonly names: string[];
-  constructor(names: string[]) {
+  public readonly names: string[];
+  public constructor(names: string[]) {
     this.names = names;
   }
 
-  static parse(yamlText: string): Playables {
+  public static parse(yamlText: string): Playables {
     return YAML.parse(yamlText)["playables"] as Playables;
   }
 }

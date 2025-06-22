@@ -1,8 +1,10 @@
 import moment from "moment";
-import { Birthday } from "./models/Birthday";
+import { Birthday, Name } from "@umamusume-birthdays/shared";
 import { CalendarEvent } from "./models/CalendarEvent";
-import { Name } from "./models/Name";
 
+/**
+ * カレンダーファイルデータ生成クラス
+ */
 export class Generator {
   private static readonly CONSTS = {
     PROD_ID: "ushibutatory-umamusume-birthdays-calendar",

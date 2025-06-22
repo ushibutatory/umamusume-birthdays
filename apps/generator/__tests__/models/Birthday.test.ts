@@ -1,4 +1,4 @@
-import { Birthday } from "../../src/models/Birthday";
+import { Birthday } from "@umamusume-birthdays/shared";
 
 describe("Birthday", () => {
   test("Read and parse yaml text.", () => {

@@ -1,13 +1,13 @@
 import fs from "fs";
 import path from "path";
-import { Consts } from "./consts";
-import { Birthday } from "./models/Birthday";
-import { Playables } from "./models/Playable";
+import { Consts } from "../Consts";
+import { Birthday } from "../models/Birthday";
+import { Playables } from "../models/Playables";
 
 /**
  * マスターファイル読み込みクラス
  */
-export class Reader {
+export class MasterReader {
   /**
    * 元になるデータが格納されているディレクトリ
    */
@@ -19,15 +19,13 @@ export class Reader {
     }
     this._dataDirectory = path.resolve(
       __dirname,
-      "../../../", // 上位ディレクトリに移動
+      "../../../../", // 上位ディレクトリに移動
       dataDirectoryName
     );
 
     // ディレクトリの存在確認
     if (!fs.existsSync(this._dataDirectory)) {
-      throw new Error(
-        `Master directory does not exist: ${this._dataDirectory}`
-      );
+      throw new Error(`Master directory does not exist: ${this._dataDirectory}`);
     }
   }
 

@@ -1,14 +1,17 @@
 import fs from "fs";
 import path from "path";
-import { Name } from "./models/Name";
+import { Name } from "@umamusume-birthdays/shared";
 
-export class Writer {
+/**
+ * カレンダー書き込みクラス
+ */
+export class CalendarWriter {
   /**
    * 配信用データを格納するディレクトリ
    */
   private readonly _distDirectory: string;
 
-  constructor(distDirectory: string = "dist") {
+  public constructor(distDirectory: string = "dist") {
     if (!distDirectory.trim()) {
       throw new Error("Distribution directory cannot be empty");
     }

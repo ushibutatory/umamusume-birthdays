@@ -1,0 +1,30 @@
+{
+  "name": "@umamusume-birthdays/shared",
+  "version": "1.0.0",
+  "description": "",
+  "author": "ushibutatory",
+  "license": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "lint": "eslint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "yaml": "^2.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "@umamusume-birthdays/eslint-config": "file:../eslint-config",
+    "eslint": "^9.29.0",
+    "typescript": "^5.8.3"
+  }
+}
