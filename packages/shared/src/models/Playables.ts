@@ -6,11 +6,29 @@ import YAML from "yaml";
  */
 export class Playables {
   public readonly names: string[];
-  public constructor(names: string[]) {
+
+  private constructor(names: string[]) {
     this.names = names;
   }
 
   public static parse(yamlText: string): Playables {
-    return YAML.parse(yamlText)["playables"] as Playables;
+    try {
+      const parsed = YAML.parse(yamlText);
+
+      if (!parsed || typeof parsed !== "object" || !parsed.playables) {
+        throw new Error("Invalid YAML: Root element must be an object");
+      }
+      if (!parsed.playables.names || !Array.isArray(parsed.playables.names)) {
+        throw new Error('Invalid YAML: "names" array not found');
+      }
+
+      return parsed.playables as Playables;
+    } catch (error) {
+      if (error instanceof Error) {
+        throw new Error(`Failed to parse YAML: ${error.message}`);
+      } else {
+        throw new Error("Failed to parse YAML: Unknown error");
+      }
+    }
   }
 }

@@ -1,30 +1,83 @@
+// Birthday.test.ts
 import { Birthday } from "../../src/models/Birthday";
 
 describe("Birthday", () => {
-  test("Read and parse yaml text.", () => {
-    // 入力テキスト
-    const yamlText = `
+  describe("constructor", () => {
+    test("should create Birthday instance with valid data", () => {
+      const name = { ja: "テスト", en: "Test" };
+      const date = "01/01";
+
+      const birthday = new Birthday(name, date);
+
+      expect(birthday.name).toEqual(name);
+      expect(birthday.date).toBe(date);
+    });
+  });
+
+  describe("parse", () => {
+    test("should parse valid YAML text correctly", () => {
+      const yaml = `
 birthdays:
   - name: { ja: "サンプル1", en: "sample1" }
     date: "01/01"
   - name: { ja: "サンプル2", en: "sample2" }
     date: "01/02"
-  - name: { ja: "サンプル3", en: "sample3" }
-    date: "03/01"
 `;
 
-    // 期待する結果
-    const expects = [
-      new Birthday({ ja: "サンプル1", en: "sample1" }, "01/01"),
-      new Birthday({ ja: "サンプル2", en: "sample2" }, "01/02"),
-      new Birthday({ ja: "サンプル3", en: "sample3" }, "03/01"),
-    ];
+      const birthdays = Birthday.parse(yaml);
 
-    const birthdays = Birthday.parse(yamlText);
-    expects.forEach((birthday, index) => {
-      expect(birthday.name.ja).toBe(birthdays[index].name.ja);
-      expect(birthday.name.en).toBe(birthdays[index].name.en);
-      expect(birthday.date).toBe(birthdays[index].date);
+      expect(birthdays).toHaveLength(2);
+      expect(birthdays[0]).toEqual({
+        name: { ja: "サンプル1", en: "sample1" },
+        date: "01/01",
+      });
+      expect(birthdays[1]).toEqual({
+        name: { ja: "サンプル2", en: "sample2" },
+        date: "01/02",
+      });
+    });
+
+    test("should parse empty birthdays array", () => {
+      const yaml = `
+birthdays: []
+`;
+      const birthdays = Birthday.parse(yaml);
+
+      expect(birthdays).toEqual([]);
+      expect(birthdays).toHaveLength(0);
+    });
+
+    test("should throw error for invalid YAML", () => {
+      {
+        const yaml = "invalid: yaml: content: [unclosed";
+        expect(() => {
+          Birthday.parse(yaml);
+        }).toThrow();
+      }
+      {
+        const yaml = `
+other_data:
+  - name: "test"
+`;
+        expect(() => {
+          Birthday.parse(yaml);
+        }).toThrow();
+      }
+
+      {
+        const yaml = `
+birthdays: null
+`;
+        expect(() => {
+          Birthday.parse(yaml);
+        }).toThrow();
+      }
+
+      {
+        expect(() => {
+          Birthday.parse("");
+        }).toThrow();
+      }
     });
   });
 });
