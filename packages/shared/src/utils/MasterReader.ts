@@ -13,7 +13,11 @@ export class MasterReader {
    */
   private readonly _dataDirectory: string;
 
-  constructor(dataDirectoryName: string = "data") {
+  /**
+   * コンストラクタ
+   * @param dataDirectoryName データディレクトリ名（省略可）
+   */
+  public constructor(dataDirectoryName: string = "data") {
     if (!dataDirectoryName.trim()) {
       throw new Error("Master directory path cannot be empty");
     }
