@@ -6,7 +6,9 @@
   "license": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -20,11 +22,11 @@
     "yaml": "^2.8.0"
   },
   "devDependencies": {
+    "typescript": "^5.8.3",
     "@types/node": "^24.0.3",
-    "@typescript-eslint/eslint-plugin": "^8.34.1",
-    "@typescript-eslint/parser": "^8.34.1",
-    "@umamusume-birthdays/eslint-config": "file:../eslint-config",
     "eslint": "^9.29.0",
-    "typescript": "^5.8.3"
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.2",
+    "ts-jest": "^29.4.0"
   }
 }

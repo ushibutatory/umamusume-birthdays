@@ -7,9 +7,7 @@
     "./base": "./base.mjs",
     "./typescript": "./typescript.mjs"
   },
-  "files": [
-    "*.mjs"
-  ],
+  "files": ["*.mjs"],
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",

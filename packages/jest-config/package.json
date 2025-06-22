@@ -1,0 +1,14 @@
+{
+  "name": "@umamusume-birthdays/jest-config",
+  "version": "1.0.0",
+  "main": "jest.config.mjs",
+  "files": ["jest.config.mjs"],
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint"
+  },
+  "peerDependencies": {
+    "jest": ">=29.0.0"
+  }
+}

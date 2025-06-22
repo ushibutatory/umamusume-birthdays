@@ -1,4 +1,4 @@
-import { base, typescript } from "@umamusume-birthdays/eslint-config";
+import { base, typescript, jest } from "@umamusume-birthdays/eslint-config";
 
 export default [
   {
@@ -7,6 +7,7 @@ export default [
 
   ...base,
   ...typescript,
+  ...jest,
 
   {
     files: ["**/*.ts"],

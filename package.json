@@ -1,5 +1,5 @@
 {
-  "name": "@umamusume-birthdays/packages",
+  "name": "umamusume-birthdays",
   "private": true,
   "workspaces": ["packages/*", "apps/*"],
   "scripts": {
